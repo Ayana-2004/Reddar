@@ -20,7 +20,7 @@ function HomePage() {
       <Faircode />
       <FAQ />
       <Footer />
-      <RadarRoom/>
+      {/* <RadarRoom/> */}
     </>
   );
 }
