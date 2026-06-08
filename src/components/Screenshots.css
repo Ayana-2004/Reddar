@@ -1,7 +1,37 @@
 /* ================================================
    SCREENSHOTS SECTION
    ================================================ */
+@media (max-width: 500px) {
+  .screenshots-track {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem 0.75rem;
+  }
 
+  .screenshot-phone {
+    width: 100%;
+    max-width: 140px;
+    margin: 0 auto;
+  }
+
+  .screenshot-info p {
+    font-size: 0.75rem;
+    max-width: 100%;
+  }
+
+  .screenshot-num {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .screenshots {
+    padding: 4rem 1rem;
+  }
+
+  .screenshot-phone {
+    max-width: 120px;
+  }
+}
 .screenshots {
   background: var(--black);
   padding: 6rem 4rem;

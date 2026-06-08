@@ -1,3 +1,49 @@
+@media (max-width: 768px) {
+  .hiw {
+    padding: 5rem 1.5rem;
+  }
+
+  .hiw-header {
+    margin-bottom: 3rem;
+  }
+
+  .hiw-step {
+    padding: 0;
+    max-width: 100%;
+  }
+
+  .hiw-step-text {
+    flex: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .hiw {
+    padding: 4rem 1.2rem;
+  }
+
+  .hiw-step {
+    gap: 1rem;
+  }
+
+  .hiw-step-icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .hiw-step-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .hiw-step-title {
+    font-size: 0.95rem;
+  }
+
+  .hiw-step-desc {
+    font-size: 0.8rem;
+  }
+}
 .hiw {
   background: #0E0E0E;
   padding: 7rem 2rem;

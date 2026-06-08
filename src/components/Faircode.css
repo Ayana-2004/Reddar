@@ -1,3 +1,54 @@
+@media (max-width: 600px) {
+  .fc-inner {
+    padding: 4rem 1.2rem 5rem;
+  }
+
+  .fc-band {
+    padding: 2rem 1.2rem;
+  }
+
+  .fc-band-quote {
+    font-size: 0.88rem;
+    padding-left: 0.9rem;
+  }
+
+  .fc-vm-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .fc-contrib-item {
+    padding: 1.6rem 0;
+    gap: 0.6rem;
+  }
+
+  .fc-contrib-title {
+    font-size: 0.95rem;
+  }
+
+  .fc-contrib-desc {
+    font-size: 0.82rem;
+  }
+
+  .fc-statement {
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+    gap: 1.5rem;
+  }
+
+  .fc-vm {
+    margin-bottom: 3rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .fc-band-inner {
+    gap: 1.2rem;
+  }
+
+  .fc-band-quote {
+    font-size: 0.82rem;
+  }
+}
 .fc {
   background: #F2F2E9;
 }

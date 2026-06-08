@@ -1,7 +1,36 @@
 /* ================================================
    HERO SECTION
    ================================================ */
+@media (max-width: 380px) {
+  .hero-left {
+    padding: 5.5rem 1.2rem 2.5rem;
+  }
 
+  .hero-title {
+    font-size: clamp(2.6rem, 14vw, 3.5rem);
+  }
+
+  .hero-stats {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .hero-stat-divider {
+    display: none;
+  }
+
+  .radar-alert-card {
+    right: 50%;
+    transform: translateX(50%);
+    bottom: 1rem;
+    max-width: 90vw;
+  }
+
+  .radar-container {
+    width: 220px;
+    height: 220px;
+  }
+}
 .hero {
   min-height: 100vh;
   display: grid;

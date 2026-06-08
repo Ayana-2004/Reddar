@@ -1,5 +1,61 @@
 /* ── DOWNLOAD CTA ── */
-.dl {
+
+@media (max-width: 600px) {
+  .dl {
+    padding: 5rem 1.5rem;
+  }
+
+  .dl-title {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+
+  .dl-store-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dl-store-btn {
+    width: 100%;
+    max-width: 260px;
+    justify-content: center;
+  }
+
+  .footer {
+    padding: 3rem 1.2rem 2rem;
+  }
+
+  .footer-top {
+    gap: 2rem;
+  }
+
+  .footer-brand-desc {
+    max-width: 100%;
+  }
+
+  .footer-bottom {
+    gap: 0.75rem;
+  }
+
+  .footer-made {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .dl {
+    padding: 4rem 1.2rem;
+  }
+
+  .dl-sub {
+    font-size: 0.88rem;
+  }
+
+  .footer-copy {
+    font-size: 0.72rem;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+}.dl {
   background: #C0292A;
   padding: 7rem 2rem;
   position: relative;
