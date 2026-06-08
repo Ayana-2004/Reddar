@@ -1,0 +1,24 @@
+/* ADD THESE to your Hero.css */
+
+.hero-logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1.8rem;
+  animation: fadeSlideLeft 0.9s ease both;
+}
+
+.hero-logo-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.hero-logo-name {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  letter-spacing: 0.12em;
+  color: var(--red);
+  line-height: 1;
+}

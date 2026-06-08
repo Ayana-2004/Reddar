@@ -1,0 +1,240 @@
+.fc {
+  background: #F2F2E9;
+}
+
+/* ── BAND ── */
+.fc-band {
+  background: #0E0E0E;
+  padding: 2.5rem 2rem;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.fc-band-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.fc-band-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.fc-powered {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+}
+
+.fc-logo {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.8;
+}
+
+.fc-band-quote {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.7;
+  font-style: italic;
+  border-left: 2px solid #C0292A;
+  padding-left: 1.2rem;
+  max-width: 500px;
+}
+
+/* ── MAIN ── */
+.fc-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 6rem 2rem 7rem;
+}
+
+.fc-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #C0292A;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+/* Statement */
+.fc-statement {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+  margin-bottom: 5rem;
+  padding-bottom: 5rem;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.fc-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 3.5vw, 3.5rem);
+  color: #0E0E0E;
+  line-height: 1.05;
+}
+
+.fc-title-accent {
+  color: #C0292A;
+}
+
+.fc-statement-text {
+  font-size: 0.95rem;
+  color: #6B6660;
+  line-height: 1.85;
+  margin-bottom: 1.2rem;
+}
+
+/* Vision + Mission */
+.fc-vm {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 5rem;
+}
+
+.fc-vm-card {
+  border-radius: 12px;
+  padding: 2.8rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.fc-vm-vision {
+  background: #0E0E0E;
+  color: #fff;
+}
+
+.fc-vm-mission {
+  background: #C0292A;
+  color: #fff;
+}
+
+.fc-vm-tag {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 1.5rem;
+  opacity: 0.5;
+}
+
+.fc-vm-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2vw, 2rem);
+  line-height: 1.15;
+  margin-bottom: 1.2rem;
+  color: #fff;
+}
+
+.fc-vm-desc {
+  font-size: 0.87rem;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.6);
+}
+
+/* Contributions */
+.fc-contributions-header {
+  margin-bottom: 2.5rem;
+}
+
+.fc-contributions-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 2.5vw, 2.4rem);
+  color: #0E0E0E;
+  line-height: 1.1;
+}
+
+.fc-contrib-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.fc-contrib-item {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 3rem;
+  align-items: start;
+  padding: 2.2rem 0;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  transition: background 0.2s;
+}
+
+.fc-contrib-item:hover {
+  background: rgba(0,0,0,0.02);
+}
+
+.fc-contrib-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-top: 2px;
+}
+
+.fc-contrib-num {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: rgba(0,0,0,0.2);
+}
+
+.fc-contrib-tag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #C0292A;
+  letter-spacing: 0.05em;
+  background: rgba(192,41,42,0.08);
+  padding: 0.25rem 0.7rem;
+  border-radius: 20px;
+  width: fit-content;
+}
+
+.fc-contrib-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0E0E0E;
+  margin-bottom: 0.5rem;
+}
+
+.fc-contrib-desc {
+  font-size: 0.85rem;
+  color: #8A8580;
+  line-height: 1.75;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .fc-statement {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .fc-vm {
+    grid-template-columns: 1fr;
+  }
+
+  .fc-contrib-item {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .fc-band-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
