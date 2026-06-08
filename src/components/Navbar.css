@@ -1,7 +1,20 @@
 /* ================================================
    NAVBAR
    ================================================ */
+.navbar-link--highlight {
+  color: #C0292A;
+  font-weight: 700;
+}
 
+.navbar-link--highlight:hover {
+  background: rgba(192,41,42,0.08);
+  color: #C0292A;
+}
+
+.navbar-mobile-link--highlight {
+  color: #C0292A;
+  font-weight: 700;
+}
 .navbar {
   position: fixed;
   top: 0; left: 0; right: 0;
