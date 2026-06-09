@@ -1,4 +1,4 @@
-import { articles } from "./articles";
+import { articles } from "./Articles";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./RadarRoom.css";
