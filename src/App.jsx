@@ -9,7 +9,7 @@ import FAQ from "./components/FAQ";
 import Footer from "./components/Footer";
 import RadarRoom from "./components/RadarRoom";
 import RadarRoomArticle from "./components/RadarRoomArticle";
-// import Stories from "./components/Stories"; ← comment this out until the file exists
+import Stories from "./components/Stories";
 
 function HomePage() {
   return (
@@ -20,7 +20,6 @@ function HomePage() {
       <WhyReddar />
       <Screenshots />
       <Faircode />
-      {/* removed RadarRoomArticle from here */}
       <FAQ />
       <Footer />
     </>
@@ -32,9 +31,31 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/radar-room" element={<RadarRoom />} />
-        <Route path="/radar-room/:slug" element={<RadarRoomArticle />} />
-        {/* <Route path="/stories" element={<Stories />} /> */}
+
+        <Route path="/radar-room" element={
+          <>
+            <Navbar />
+            <RadarRoom />
+            <Footer />
+          </>
+        } />
+
+        <Route path="/radar-room/:slug" element={
+          <>
+            <Navbar />
+            <RadarRoomArticle />
+            <Footer />
+          </>
+        } />
+
+        <Route path="/stories" element={
+          <>
+            <Navbar />
+            <Stories />
+            <Footer />
+          </>
+        } />
+
       </Routes>
     </BrowserRouter>
   );
