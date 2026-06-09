@@ -30,9 +30,9 @@ const contributions = [
 
 export default function Faircode() {
   return (
-    <section className="fc" id="about">
-
-      {/* ── INTRO BAND ── */}
+    <section className="fc" style={{ position: 'relative' }}>
+  <span id="about" style={{ position: 'absolute', top: '-80px' }} />
+  <span id="faircode" style={{ position: 'absolute', top: '-80px' }} />
       <div className="fc-band">
         <div className="fc-band-inner">
           <div className="fc-band-left">

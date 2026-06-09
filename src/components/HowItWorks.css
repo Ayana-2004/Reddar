@@ -1,49 +1,7 @@
-@media (max-width: 768px) {
-  .hiw {
-    padding: 5rem 1.5rem;
-  }
+/* ================================================
+   HOW IT WORKS SECTION
+   ================================================ */
 
-  .hiw-header {
-    margin-bottom: 3rem;
-  }
-
-  .hiw-step {
-    padding: 0;
-    max-width: 100%;
-  }
-
-  .hiw-step-text {
-    flex: 1;
-  }
-}
-
-@media (max-width: 480px) {
-  .hiw {
-    padding: 4rem 1.2rem;
-  }
-
-  .hiw-step {
-    gap: 1rem;
-  }
-
-  .hiw-step-icon {
-    width: 44px;
-    height: 44px;
-  }
-
-  .hiw-step-icon svg {
-    width: 20px;
-    height: 20px;
-  }
-
-  .hiw-step-title {
-    font-size: 0.95rem;
-  }
-
-  .hiw-step-desc {
-    font-size: 0.8rem;
-  }
-}
 .hiw {
   background: #0E0E0E;
   padding: 7rem 2rem;
@@ -64,6 +22,8 @@
 .hiw-inner {
   max-width: 1100px;
   margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .hiw-header {
@@ -116,6 +76,7 @@
   text-align: center;
   position: relative;
   padding: 0 1rem;
+  box-sizing: border-box;
 }
 
 .hiw-step-icon {
@@ -130,6 +91,7 @@
   margin-bottom: 1rem;
   color: #C0292A;
   transition: background 0.3s, border-color 0.3s;
+  flex-shrink: 0;
 }
 
 .hiw-step-icon svg {
@@ -175,27 +137,72 @@
   pointer-events: none;
 }
 
+/* ================================================
+   RESPONSIVE — always AFTER base styles
+   ================================================ */
+
 @media (max-width: 768px) {
+  .hiw {
+    padding: 5rem 1.5rem;
+  }
+
+  .hiw-header {
+    margin-bottom: 3rem;
+  }
+
   .hiw-steps {
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;        /* ← stretch full width */
     gap: 2.5rem;
   }
 
   .hiw-step {
-    max-width: 100%;
+    max-width: 100%;             /* ← full width on mobile */
+    width: 100%;
     flex-direction: row;
     text-align: left;
     gap: 1.2rem;
     align-items: flex-start;
+    padding: 0;                  /* ← no side padding that clips content */
   }
 
   .hiw-step-icon {
-    flex-shrink: 0;
     margin-bottom: 0;
+  }
+
+  .hiw-step-text {
+    flex: 1;
   }
 
   .hiw-connector {
     display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .hiw {
+    padding: 4rem 1.2rem;
+  }
+
+  .hiw-step {
+    gap: 1rem;
+  }
+
+  .hiw-step-icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .hiw-step-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .hiw-step-title {
+    font-size: 0.95rem;
+  }
+
+  .hiw-step-desc {
+    font-size: 0.8rem;
   }
 }

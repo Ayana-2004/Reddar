@@ -40,12 +40,35 @@ export default function Navbar() {
     navigate("/radar-room");
   };
 
+  const handleStories = () => {
+    setMenuOpen(false);
+    navigate("/stories");
+  };
+
+ const handleFaircode = () => {
+    setMenuOpen(false);
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        const el = document.querySelector("#faircode");
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    } else {
+      const el = document.querySelector("#faircode");
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <header className={`navbar ${scrolled ? "navbar--scrolled" : ""}`}>
       <div className="navbar-inner">
 
         {/* LOGO */}
-        <a href="#" className="navbar-logo" onClick={(e) => { e.preventDefault(); navigate("/"); window.scrollTo({ top: 0, behavior: "smooth" }); }}>
+        <a href="#" className="navbar-logo" onClick={(e) => {
+          e.preventDefault();
+          navigate("/");
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }}>
           <span className="navbar-logo-icon">
             <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle cx="16" cy="16" r="15" stroke="#C0292A" strokeWidth="1.2" opacity="0.3"/>
@@ -68,6 +91,12 @@ export default function Navbar() {
           ))}
           <button className="navbar-link navbar-link--highlight" onClick={handleRadarRoom}>
             Radar Room
+          </button>
+          <button className="navbar-link" onClick={handleStories}>
+            Stories
+          </button>
+          <button className="navbar-link" onClick={handleFaircode}>
+            Faircode
           </button>
         </nav>
 
@@ -99,6 +128,12 @@ export default function Navbar() {
         ))}
         <button className="navbar-mobile-link navbar-mobile-link--highlight" onClick={handleRadarRoom}>
           Radar Room
+        </button>
+        <button className="navbar-mobile-link" onClick={handleStories}>
+          Stories of Hope
+        </button>
+        <button className="navbar-mobile-link" onClick={handleFaircode}>
+          Faircode Initiative
         </button>
         <a href="#download" className="navbar-mobile-cta" onClick={() => { setMenuOpen(false); handleNav("#download"); }}>
           Download App

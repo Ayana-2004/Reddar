@@ -1,120 +1,46 @@
 /* ================================================
    HERO SECTION
    ================================================ */
-/* ── RESPONSIVE ── */
-@media (max-width: 960px) {
-  .hero {
-    grid-template-columns: 1fr;
-    min-height: auto;
-  }
 
-  .hero-left {
-    padding: 6rem 1.5rem 3rem;
-  }
-
-  .hero-right {
-    min-height: 380px;
-    padding: 3rem 1.5rem 4rem;
-  }
-
-  .radar-container {
-    width: 260px;
-    height: 260px;
-  }
-
-  .hero-title {
-    font-size: clamp(2.4rem, 9vw, 4rem);
-  }
-
-  .radar-alert-card {
-    bottom: 1.2rem;
-    right: 0.8rem;
-    max-width: 200px;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-left {
-    padding: 5.5rem 1.2rem 2.5rem;
-  }
-
-  .hero-title {
-    font-size: clamp(2rem, 8vw, 2.8rem);
-  }
-
-  .hero-sub {
-    font-size: 0.88rem;
-  }
-
-  .hero-badge span:last-child {
-    font-size: 0.65rem;
-  }
-
-  .hero-store-row {
-    flex-direction: column;
-  }
-
-  .store-btn {
-    justify-content: center;
-    width: 100%;
-    max-width: 280px;
-  }
-
-  .hero-cta-row {
-    flex-direction: column;
-  }
-
-  .hero-btn-outline {
-    text-align: center;
-    justify-content: center;
-  }
-
-  .hero-stats {
-    flex-wrap: wrap;
-    gap: 0.75rem;
-  }
-
-  .hero-stat-divider {
-    display: none;
-  }
-
-  .radar-container {
-    width: 230px;
-    height: 230px;
-  }
-
-  .radar-alert-card {
-    right: 50%;
-    transform: translateX(50%);
-    bottom: 1rem;
-    max-width: 85vw;
-  }
-}
 .hero {
   min-height: 100vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
   padding-top: 0;
-  overflow: hidden;
+  overflow: clip;
   position: relative;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* ── LEFT ── */
 .hero-left {
- background: #F2F2E9;
+  background: #F2F2E9;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 5rem 4rem 5rem;
   position: relative;
   z-index: 2;
-  animation: fadeSlideLeft 0.9s ease both;
+  box-sizing: border-box;
+  /* NO animation here — desktop only via media query below */
 }
 
 @keyframes fadeSlideLeft {
   from { opacity: 0; transform: translateX(-30px); }
   to   { opacity: 1; transform: translateX(0); }
+}
+
+/* ── DESKTOP ONLY animations ── */
+@media (min-width: 961px) {
+  .hero-left        { animation: fadeSlideLeft 0.9s 0s   ease both; }
+  .hero-title       { animation: fadeSlideLeft 0.9s 0.1s ease both; }
+  .hero-sub         { animation: fadeSlideLeft 0.9s 0.2s ease both; }
+  .hero-cta-row     { animation: fadeSlideLeft 0.9s 0.3s ease both; }
+  .hero-store-label { animation: fadeSlideLeft 0.9s 0.35s ease both; }
+  .hero-store-row   { animation: fadeSlideLeft 0.9s 0.4s ease both; }
+  .hero-stats       { animation: fadeSlideLeft 0.9s 0.5s ease both; }
 }
 
 /* Badge */
@@ -156,10 +82,9 @@
   font-family: var(--font-display);
   font-size: clamp(3.8rem, 5.5vw, 6.5rem);
   line-height: 0.93;
- color: var(--black);
+  color: var(--black);
   margin-bottom: 1.5rem;
   letter-spacing: 0.02em;
-  animation: fadeSlideLeft 0.9s 0.1s ease both;
 }
 
 .hero-title-accent {
@@ -170,10 +95,9 @@
 .hero-sub {
   font-size: 1rem;
   line-height: 1.75;
-    color: var(--warm-gray);
+  color: var(--warm-gray);
   max-width: 400px;
   margin-bottom: 2rem;
-  animation: fadeSlideLeft 0.9s 0.2s ease both;
 }
 
 /* CTA row */
@@ -182,7 +106,6 @@
   gap: 1rem;
   margin-bottom: 2.5rem;
   flex-wrap: wrap;
-  animation: fadeSlideLeft 0.9s 0.3s ease both;
 }
 
 .hero-btn-outline {
@@ -213,9 +136,8 @@
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.3);
+  color: var(--warm-gray);
   margin-bottom: 0.75rem;
-  animation: fadeSlideLeft 0.9s 0.35s ease both;
 }
 
 /* Store buttons row */
@@ -224,7 +146,6 @@
   gap: 0.85rem;
   flex-wrap: wrap;
   margin-bottom: 2.5rem;
-  animation: fadeSlideLeft 0.9s 0.4s ease both;
 }
 
 .store-btn {
@@ -297,7 +218,6 @@
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  animation: fadeSlideLeft 0.9s 0.5s ease both;
 }
 
 .hero-stat {
@@ -308,7 +228,7 @@
 .hero-stat strong {
   font-size: 0.95rem;
   font-weight: 700;
- color: var(--black);
+  color: var(--black);
   line-height: 1.2;
 }
 
@@ -322,7 +242,7 @@
 .hero-stat-divider {
   width: 1px;
   height: 28px;
-background: rgba(0, 0, 0, 0.15);
+  background: rgba(0, 0, 0, 0.15);
 }
 
 /* ── RIGHT — RADAR ── */
@@ -341,7 +261,6 @@ background: rgba(0, 0, 0, 0.15);
   to   { opacity: 1; }
 }
 
-/* Subtle noise bg */
 .hero-right::before {
   content: '';
   position: absolute;
@@ -360,7 +279,6 @@ background: rgba(0, 0, 0, 0.15);
   z-index: 1;
 }
 
-/* Rings */
 .radar-ring {
   position: absolute;
   border-radius: 50%;
@@ -378,7 +296,6 @@ background: rgba(0, 0, 0, 0.15);
   50%       { border-color: rgba(255,255,255,0.18); }
 }
 
-/* Crosshair */
 .radar-crosshair-h,
 .radar-crosshair-v {
   position: absolute;
@@ -395,7 +312,6 @@ background: rgba(0, 0, 0, 0.15);
   transform: translateX(-50%);
 }
 
-/* Sweep */
 .radar-sweep {
   position: absolute;
   inset: 0;
@@ -415,7 +331,6 @@ background: rgba(0, 0, 0, 0.15);
   to   { transform: rotate(360deg); }
 }
 
-/* Blips injected by JS */
 .radar-blip {
   position: absolute;
   width: 10px;
@@ -454,7 +369,6 @@ background: rgba(0, 0, 0, 0.15);
   100% { opacity: 0; transform: scale(3.5); }
 }
 
-/* Center blood drop */
 .radar-center {
   position: absolute;
   top: 50%; left: 50%;
@@ -478,7 +392,6 @@ background: rgba(0, 0, 0, 0.15);
   height: 54px;
 }
 
-/* Radar label */
 .radar-label {
   position: absolute;
   bottom: -2rem;
@@ -502,7 +415,7 @@ background: rgba(0, 0, 0, 0.15);
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: rgba(0,0,0,0.4);
+  color: rgba(255,255,255,0.4);
 }
 
 /* ── FLOATING ALERT CARD ── */
@@ -577,27 +490,38 @@ background: rgba(0, 0, 0, 0.15);
   100% { opacity: 0; transform: scale(2.2); }
 }
 
-/* ── RESPONSIVE ── */
-/* ── RESPONSIVE ── */
+/* ================================================
+   RESPONSIVE
+   ================================================ */
+
 @media (max-width: 960px) {
   .hero {
     grid-template-columns: 1fr;
     min-height: auto;
+    width: 100%;
+    overflow: clip;
   }
+
   .hero-left {
-    padding: 6rem 1.5rem 3rem;
+    padding: 6rem 1.5rem 3rem 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
   }
+
   .hero-right {
-    min-height: 380px;
+    min-height: 420px;
     padding: 3rem 1.5rem 4rem;
   }
+
   .radar-container {
-    width: 260px;
-    height: 260px;
+    width: 280px;
+    height: 280px;
   }
+
   .hero-title {
     font-size: clamp(2.4rem, 9vw, 4rem);
   }
+
   .radar-alert-card {
     bottom: 1.2rem;
     right: 0.8rem;
@@ -607,43 +531,64 @@ background: rgba(0, 0, 0, 0.15);
 
 @media (max-width: 480px) {
   .hero-left {
-    padding: 5.5rem 1.2rem 2.5rem;
+    padding: 5.5rem 1.2rem 2.5rem 1.2rem;
   }
+
   .hero-title {
     font-size: clamp(2rem, 8vw, 2.8rem);
   }
+
   .hero-sub {
     font-size: 0.88rem;
+    max-width: 100%;
   }
+
   .hero-badge span:last-child {
     font-size: 0.65rem;
   }
+
   .hero-store-row {
     flex-direction: column;
+    align-items: flex-start;
   }
+
   .store-btn {
-    justify-content: center;
     width: 100%;
     max-width: 280px;
+    box-sizing: border-box;
   }
+
   .hero-cta-row {
     flex-direction: column;
+    align-items: flex-start;
   }
+
   .hero-btn-outline {
     text-align: center;
     justify-content: center;
+    width: 100%;
+    max-width: 280px;
+    box-sizing: border-box;
   }
+
   .hero-stats {
     flex-wrap: wrap;
     gap: 0.75rem;
   }
+
   .hero-stat-divider {
     display: none;
   }
+
+  .hero-right {
+    min-height: 360px;
+  }
+
   .radar-container {
     width: 230px;
     height: 230px;
   }
+
   .radar-alert-card {
     right: 50%;
     transform: translateX(50%);
