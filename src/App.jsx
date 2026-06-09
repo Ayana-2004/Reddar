@@ -20,6 +20,7 @@ function HomePage() {
       <WhyReddar />
       <Screenshots />
       <Faircode />
+      <RadarRoomArticle/>
       <FAQ />
       <Footer />
     </>

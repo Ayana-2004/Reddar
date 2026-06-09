@@ -1,5 +1,5 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { articles } from "./articles";
+import { articles } from "./Articles";
 import "./RadarRoomArticle.css";
 
 const articleContent = {
