@@ -52,10 +52,17 @@ export default function Hero() {
         </h1>
 
         <p className="hero-sub">
-          REDDAR connects donors, recipients, hospitals, and communities
-          when every second matters. Be visible. Be reachable. Save lives.
-        </p>
+  REDDAR connects donors, recipients, hospitals, and communities
+  when every second matters. Be visible. Be reachable. Save lives.
+</p>
 
+{/* CEO TEXT */}
+<p className="hero-sub" style={{ marginTop: "8px", fontStyle: "italic" }}>
+  India's community-powered blood response network.
+</p>
+<p className="hero-sub" style={{ marginTop: "4px" }}>
+  Powered by people. Enabled by technology. Driven by humanity.
+</p>
         {/* CTA ROW */}
         <div className="hero-cta-row">
           <a href="#how"      className="hero-btn-outline">How It Works</a>

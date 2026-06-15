@@ -40,10 +40,11 @@ export default function Faircode() {
             <img src={faircodelogo} alt="Faircode Infotech" className="fc-logo" />
           </div>
           <div className="fc-band-right">
-            <p className="fc-band-quote">
-              "Technology should solve real problems<br />
-              and contribute meaningfully to society."
-            </p>
+           <p className="fc-band-quote">
+  "At Faircode, we believe innovation has its greatest value<br />
+  when it serves people. REDDAR is not a commercial venture —<br />
+  it is our contribution toward a stronger, more connected society."
+</p>
           </div>
         </div>
       </div>
@@ -61,15 +62,20 @@ export default function Faircode() {
             </h2>
           </div>
           <div className="fc-statement-right">
-            <p className="fc-statement-text">
-              REDDAR is a social impact initiative by Faircode Infotech Pvt. Ltd.
-              We built REDDAR because we believe a single piece of technology,
-              in the right hands, at the right moment, can save a life.
-            </p>
-            <p className="fc-statement-text">
-              No life should be lost due to the unavailability of blood.
-              That belief drives everything we build.
-            </p>
+           <p className="fc-statement-text">
+  REDDAR is a social impact initiative by Faircode Infotech. For over a decade,
+  Faircode has built technology solutions for governments, institutions,
+  businesses, and communities.
+</p>
+<p className="fc-statement-text">
+  REDDAR represents our belief that technology should not only solve business
+  problems — it should save lives. When technology can help save lives,
+  we believe it should.
+</p>
+<p className="fc-statement-text">
+  No life should be lost due to the unavailability of blood.
+  That belief drives everything we build.
+</p>
           </div>
         </div>
 

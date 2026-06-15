@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import "./Navbar.css";
+import reddarLogo from "../assets/reddar-logo.png";
 
 const navLinks = [
   { label: "How It Works", href: "#how" },
@@ -69,16 +70,9 @@ export default function Navbar() {
           navigate("/");
           window.scrollTo({ top: 0, behavior: "smooth" });
         }}>
-          <span className="navbar-logo-icon">
-            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="16" cy="16" r="15" stroke="#C0292A" strokeWidth="1.2" opacity="0.3"/>
-              <circle cx="16" cy="16" r="10" stroke="#C0292A" strokeWidth="1.2" opacity="0.5"/>
-              <circle cx="16" cy="16" r="5"  stroke="#C0292A" strokeWidth="1.2" opacity="0.7"/>
-              <line x1="16" y1="1"  x2="16" y2="31" stroke="#C0292A" strokeWidth="0.8" opacity="0.25"/>
-              <line x1="1"  y1="16" x2="31" y2="16" stroke="#C0292A" strokeWidth="0.8" opacity="0.25"/>
-              <path d="M16 9 C16 9, 9 15.5, 9 19.5 A7 7 0 0 0 23 19.5 C23 15.5, 16 9, 16 9Z" fill="#C0292A"/>
-            </svg>
-          </span>
+         <span className="navbar-logo-icon">
+  <img src={reddarLogo} alt="REDDAR" style={{ width: "36px", height: "36px", objectFit: "contain" }} />
+</span>
           <span className="navbar-logo-text">REDDAR</span>
         </a>
 

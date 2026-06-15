@@ -1,30 +1,17 @@
 import "./Screenshots.css";
-import welcome from "../assets/welcome.jpeg";
-import request from "../assets/request.jpeg";
-import details from "../assets/details.jpeg";
-import profile from "../assets/profile.jpeg";
-
+import ios1 from "../assets/ios1.png";
+import ios2 from "../assets/ios2.png";
+import ios3 from "../assets/ios3.png";
+import ios4 from "../assets/ios4.png";
+import ios5 from "../assets/ios5.png";
+import ios6 from "../assets/ios6.png";
 const screens = [
-  {
-    img: welcome,
-    title: "Get Started",
-    desc: "Choose your role — Donor, Recipient, or Both. One tap to join India's lifesaving radar.",
-  },
-  {
-    img: request,
-    title: "Live Requests",
-    desc: "See urgent blood requests near you in real time. Location-aware, blood-group matched.",
-  },
-  {
-    img: details,
-    title: "Request Details",
-    desc: "View hospital, urgency, and units needed. Confirm your donation with one tap.",
-  },
-  {
-    img: profile,
-    title: "Your Profile",
-    desc: "Track your donations, manage visibility, and control when you appear on the radar.",
-  },
+  { img: ios1, title: "Get Started", desc: "Choose your role — Donor, Recipient, or Both. One tap to join India's lifesaving radar." },
+  { img: ios2, title: "Request Blood", desc: "Create urgent blood requests in seconds and connect with nearby donors instantly." },
+  { img: ios3, title: "One Tap To Help", desc: "Respond instantly to emergency blood requests near you." },
+  { img: ios4, title: "Manage Requests", desc: "Monitor active requests and donor responses in one place." },
+  { img: ios5, title: "Nearby Donors", desc: "Get matched with donors based on location and blood group." },
+  { img: ios6, title: "Hospital Search", desc: "Find hospitals and blood banks across Kerala instantly." },
 ];
 
 export default function Screenshots() {
@@ -32,11 +19,12 @@ export default function Screenshots() {
     <section className="screenshots" id="screenshots">
       <div className="screenshots-header">
         <p className="section-eyebrow">The App</p>
-        <h2 className="section-title">Built for Speed.<br />Designed with Care.</h2>
+       <h2 className="section-title">Every Eligible Donor.<br />Findable.</h2>
         <p className="section-body">
-          Every screen is crafted to work in the most stressful moments —
-          when someone's life depends on a fast response.
-        </p>
+  Every minute matters when blood is needed. REDDAR was created by Faircode
+  to help communities connect faster, respond quicker, and ensure that help
+  is never far away. Technology is the tool. Saving lives is the mission.
+</p>
       </div>
 
       <div className="screenshots-track">

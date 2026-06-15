@@ -72,9 +72,12 @@ export default function WhyReddar() {
         <div className="why-header">
           <span className="why-label">The Difference</span>
           <h2 className="why-title">Why REDDAR</h2>
-          <p className="why-sub">
-            Designed from the ground up for real emergencies — fast, simple, and built around the donor.
-          </p>
+         <p className="why-sub">
+  Not just an app. A community that responds. When someone needs blood,
+  time becomes precious. REDDAR brings together donors, recipients,
+  hospitals, and communities so that help can be found when it matters most.
+  Because no one should face a blood emergency alone.
+</p>
         </div>
 
         <div className="why-grid">

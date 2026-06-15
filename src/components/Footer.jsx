@@ -1,6 +1,6 @@
 import "./Footer.css";
 import faircodelogo from "../assets/Faircode.png";
-
+import reddarLogo from "../assets/reddar-logo.png";  // ← ADD THIS
 const playstoreUrl = "https://play.google.com/store/apps/details?id=YOUR_APP_ID";
 const appstoreUrl  = "https://apps.apple.com/app/YOUR_APP_ID";
 
@@ -13,12 +13,7 @@ const navLinks = [
 ];
 
 const RadarLogo = () => (
-  <svg viewBox="0 0 32 32" fill="none" className="footer-logo-svg">
-    <circle cx="16" cy="16" r="15" stroke="#C0292A" strokeWidth="1.2" opacity="0.4"/>
-    <circle cx="16" cy="16" r="10" stroke="#C0292A" strokeWidth="1.2" opacity="0.6"/>
-    <circle cx="16" cy="16" r="5"  stroke="#C0292A" strokeWidth="1.2" opacity="0.8"/>
-    <path d="M16 9 C16 9 9 15.5 9 19.5 A7 7 0 0 0 23 19.5 C23 15.5 16 9 16 9Z" fill="#C0292A"/>
-  </svg>
+  <img src={reddarLogo} alt="REDDAR" className="footer-logo-svg" />
 );
 
 const PlayIcon = () => (
