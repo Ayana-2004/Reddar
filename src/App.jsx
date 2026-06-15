@@ -1,4 +1,5 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
+import { useEffect } from "react"
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import HowItWorks from "./components/HowItWorks";
@@ -12,21 +13,21 @@ import RadarRoomArticle from "./components/RadarRoomArticle";
 import Stories from "./components/Stories";
 import bannerImg from "./assets/reddar-banner.png";
 
+  
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+}
+
 function HomePage() {
   return (
     <>
       <Navbar />
       <Hero />
-      {/* BANNER */}
-<div style={{ width: "100%", lineHeight: 0 }}>
-  <img
-    src={bannerImg}
-    alt="Find Donors. Request Blood. Save Lives."
-    style={{ width: "100%", height: "auto", display: "block" }}
-  />
-</div>
-
-{/* MISSION STRIP */}
+      {/* MISSION STRIP */}
 <div style={{
   background: "#0E0E0E",
   padding: "64px 24px",
@@ -64,10 +65,22 @@ function HomePage() {
     the difference between panic and hope is knowing someone is out there.
   </p>
 </div>
-
 <HowItWorks />
+      {/* BANNER */}
+<div style={{ width: "100%", lineHeight: 0 }}>
+  <img
+    src={bannerImg}
+    alt="Find Donors. Request Blood. Save Lives."
+    style={{ width: "100%", height: "auto", display: "block" }}
+  />
+</div>
+
+
+
+{/* <HowItWorks /> */}
       <WhyReddar />
       <Screenshots />
+      
       <Faircode />
       <FAQ />
       <Footer />
@@ -78,6 +91,7 @@ function HomePage() {
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />
 
