@@ -45,6 +45,10 @@ export default function Navbar() {
     setMenuOpen(false);
     navigate("/stories");
   };
+  const handleHospitals = () => {
+  setMenuOpen(false);
+  navigate("/hospitals");
+};
 
  const handleFaircode = () => {
     setMenuOpen(false);
@@ -83,6 +87,12 @@ export default function Navbar() {
               {l.label}
             </button>
           ))}
+          <button className="navbar-link" onClick={handleHospitals}>
+  Hospitals
+</button>
+<button className="navbar-link navbar-link--highlight" onClick={handleRadarRoom}>
+  Radar Room
+</button>
           <button className="navbar-link navbar-link--highlight" onClick={handleRadarRoom}>
             Radar Room
           </button>
@@ -120,6 +130,12 @@ export default function Navbar() {
             {l.label}
           </button>
         ))}
+        <button className="navbar-mobile-link" onClick={handleHospitals}>
+  Hospitals
+</button>
+<button className="navbar-mobile-link navbar-mobile-link--highlight" onClick={handleRadarRoom}>
+  Radar Room
+</button>
         <button className="navbar-mobile-link navbar-mobile-link--highlight" onClick={handleRadarRoom}>
           Radar Room
         </button>

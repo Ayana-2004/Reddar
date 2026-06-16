@@ -12,6 +12,7 @@ import RadarRoom from "./components/RadarRoom";
 import RadarRoomArticle from "./components/RadarRoomArticle";
 import Stories from "./components/Stories";
 import bannerImg from "./assets/reddar-banner.png";
+import Hospitals from './components/Hospitals';
 
   
 function ScrollToTop() {
@@ -77,7 +78,7 @@ function HomePage() {
 
 
 
-{/* <HowItWorks /> */}
+
       <WhyReddar />
       <Screenshots />
       
@@ -95,14 +96,21 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
 
-        <Route path="/radar-room" element={
-          <>
-            <Navbar />
-            <RadarRoom />
-            <Footer />
-          </>
-        } />
+        <Route path="/hospitals" element={
+  <>
+    <Navbar />
+    <Hospitals />
+    <Footer />
+  </>
+} />
 
+<Route path="/radar-room" element={
+  <>
+    <Navbar />
+    <RadarRoom />
+    <Footer />
+  </>
+} />
         <Route path="/radar-room/:slug" element={
           <>
             <Navbar />
