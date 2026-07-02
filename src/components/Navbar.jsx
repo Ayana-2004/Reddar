@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import "./Navbar.css";
 import reddarLogo from "../assets/reddar-logo.png";
@@ -15,11 +15,26 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
+  const navRef = useRef(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    const setNavHeight = () => {
+      if (navRef.current) {
+        document.documentElement.style.setProperty(
+          "--navbar-height",
+          `${navRef.current.offsetHeight}px`
+        );
+      }
+    };
+    setNavHeight();
+    window.addEventListener("resize", setNavHeight);
+    return () => window.removeEventListener("resize", setNavHeight);
   }, []);
 
   const handleNav = (href) => {
@@ -65,7 +80,7 @@ export default function Navbar() {
   };
 
   return (
-    <header className={`navbar ${scrolled ? "navbar--scrolled" : ""}`}>
+    <header className={`navbar ${scrolled ? "navbar--scrolled" : ""}`} ref={navRef}>
       <div className="navbar-inner">
 
         {/* LOGO */}
