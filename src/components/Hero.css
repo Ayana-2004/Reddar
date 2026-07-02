@@ -3,12 +3,12 @@
    ================================================ */
 
 .hero {
-  height: 100vh;
-  min-height: 100vh;
+  height: calc(100vh - var(--navbar-height));
+  min-height: calc(100vh - var(--navbar-height));
+  margin-top: var(--navbar-height);
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
-  padding-top: 0;
   overflow: clip;
   position: relative;
   width: 100%;
@@ -503,6 +503,7 @@
 @media (max-width: 960px) {
   .hero {
     height: auto;
+    margin-top: var(--navbar-height);
     grid-template-columns: 1fr;
     min-height: auto;
     width: 100%;
