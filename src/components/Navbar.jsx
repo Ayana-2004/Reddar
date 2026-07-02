@@ -136,9 +136,9 @@ export default function Navbar() {
 <button className="navbar-mobile-link navbar-mobile-link--highlight" onClick={handleRadarRoom}>
   Radar Room
 </button>
-        <button className="navbar-mobile-link navbar-mobile-link--highlight" onClick={handleRadarRoom}>
+        {/* <button className="navbar-mobile-link navbar-mobile-link--highlight" onClick={handleRadarRoom}>
           Radar Room
-        </button>
+        </button> */}
         <button className="navbar-mobile-link" onClick={handleStories}>
           Stories of Hope
         </button>

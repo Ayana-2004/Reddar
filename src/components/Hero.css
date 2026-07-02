@@ -3,6 +3,7 @@
    ================================================ */
 
 .hero {
+  height: 100vh;
   min-height: 100vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -20,11 +21,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 5rem 4rem 5rem;
+  padding: 2.5rem 4rem;
   position: relative;
   z-index: 2;
   box-sizing: border-box;
-  /* NO animation here — desktop only via media query below */
 }
 
 @keyframes fadeSlideLeft {
@@ -52,7 +52,7 @@
   border: 1px solid rgba(192, 41, 42, 0.3);
   border-radius: 20px;
   padding: 0.4rem 1rem;
-  margin-bottom: 1.8rem;
+  margin-bottom: 1rem;
   width: fit-content;
 }
 
@@ -80,10 +80,10 @@
 /* Title */
 .hero-title {
   font-family: var(--font-display);
-  font-size: clamp(3.8rem, 5.5vw, 6.5rem);
-  line-height: 0.93;
+  font-size: clamp(3rem, 4.8vw, 5.5rem);
+  line-height: 0.95;
   color: var(--black);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   letter-spacing: 0.02em;
 }
 
@@ -94,17 +94,23 @@
 /* Subtitle */
 .hero-sub {
   font-size: 1rem;
-  line-height: 1.75;
+  line-height: 1.6;
   color: var(--warm-gray);
   max-width: 400px;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+}
+
+.hero-sub-italic {
+  font-style: italic;
+  font-size: 0.9rem;
+  margin-top: -0.4rem;
 }
 
 /* CTA row */
 .hero-cta-row {
   display: flex;
   gap: 1rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.5rem;
   flex-wrap: wrap;
 }
 
@@ -137,7 +143,7 @@
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--warm-gray);
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
 }
 
 /* Store buttons row */
@@ -145,7 +151,7 @@
   display: flex;
   gap: 0.85rem;
   flex-wrap: wrap;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .store-btn {
@@ -154,7 +160,7 @@
   gap: 0.7rem;
   background: #1a1a1a;
   color: #fff;
-  padding: 0.75rem 1.4rem;
+  padding: 0.65rem 1.3rem;
   border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   text-decoration: none;
@@ -496,6 +502,7 @@
 
 @media (max-width: 960px) {
   .hero {
+    height: auto;
     grid-template-columns: 1fr;
     min-height: auto;
     width: 100%;
@@ -558,10 +565,10 @@
     box-sizing: border-box;
   }
 
-.hero-cta-row {
-  flex-direction: column;
-  align-items: center;
-}
+  .hero-cta-row {
+    flex-direction: column;
+    align-items: center;
+  }
 
   .hero-btn-outline {
     text-align: center;

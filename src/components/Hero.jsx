@@ -57,11 +57,8 @@ export default function Hero() {
           when every second matters. Be visible. Be reachable. Save lives.
         </p>
 
-        <p className="hero-sub" style={{ marginTop: "8px", fontStyle: "italic" }}>
-          India's community-powered blood response network.
-        </p>
-        <p className="hero-sub" style={{ marginTop: "4px" }}>
-          Powered by people. Enabled by technology. Driven by humanity.
+        <p className="hero-sub hero-sub-italic">
+          India's community-powered blood response network — powered by people, driven by humanity.
         </p>
 
         {/* CTA ROW */}
