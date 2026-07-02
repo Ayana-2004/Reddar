@@ -93,9 +93,7 @@ export default function Navbar() {
 <button className="navbar-link navbar-link--highlight" onClick={handleRadarRoom}>
   Radar Room
 </button>
-          <button className="navbar-link navbar-link--highlight" onClick={handleRadarRoom}>
-            Radar Room
-          </button>
+        
           <button className="navbar-link" onClick={handleStories}>
             Stories
           </button>
