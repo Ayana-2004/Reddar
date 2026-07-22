@@ -1,6 +1,6 @@
 import "./Footer.css";
 import faircodelogo from "../assets/Faircode.png";
-import reddarLogo from "../assets/reddar-logo.png";  // ← ADD THIS
+import reddarLockup from "../assets/Reddar-red.svg";
 const playstoreUrl = "https://play.google.com/store/apps/details?id=YOUR_APP_ID";
 const appstoreUrl  = "https://apps.apple.com/app/YOUR_APP_ID";
 
@@ -13,7 +13,7 @@ const navLinks = [
 ];
 
 const RadarLogo = () => (
-  <img src={reddarLogo} alt="REDDAR" className="footer-logo-svg" />
+  <img src={reddarLockup} alt="REDDAR" className="footer-logo-svg" />
 );
 
 const PlayIcon = () => (
@@ -84,7 +84,6 @@ export default function Footer() {
             <div className="footer-brand">
               <div className="footer-logo">
                 <RadarLogo />
-                <span className="footer-logo-text">REDDAR</span>
               </div>
               <p className="footer-tagline">Life on Radar.</p>
               <p className="footer-brand-desc">

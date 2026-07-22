@@ -125,7 +125,7 @@ export default function Hero() {
           <div className="radar-sweep" />
           <div className="radar-center">
             <svg viewBox="0 0 40 50" className="blood-drop-svg">
-              <path d="M20 2 C20 2, 2 22, 2 32 A18 18 0 0 0 38 32 C38 22, 20 2, 20 2Z" fill="#C0292A"/>
+              <path d="M20 2 C20 2, 2 22, 2 32 A18 18 0 0 0 38 32 C38 22, 20 2, 20 2Z" fill="#FC1819"/>
               <path d="M14 36 Q20 28 26 36" stroke="rgba(255,255,255,0.35)" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
             </svg>
           </div>
@@ -138,7 +138,7 @@ export default function Hero() {
         {/* Floating alert card */}
         <div className="radar-alert-card">
           <div className="alert-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#C0292A" strokeWidth="2">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#FC1819" strokeWidth="2">
               <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
             </svg>
           </div>

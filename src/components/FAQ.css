@@ -19,7 +19,7 @@
   }
 }
 .faq {
-  background: #0E0E0E;
+  background: #111111;
   padding: 7rem 2rem;
   position: relative;
 }
@@ -31,7 +31,7 @@
   transform: translateX(-50%);
   width: 600px;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(192,41,42,0.4), transparent);
+  background: linear-gradient(90deg, transparent, rgba(252, 24, 25,0.4), transparent);
 }
 
 .faq-inner {
@@ -47,10 +47,10 @@
 
 .faq-label {
   font-size: 0.68rem;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #C0292A;
+  color: #FC1819;
   display: block;
   margin-bottom: 1rem;
 }
@@ -104,7 +104,7 @@
 }
 
 .faq-item--open .faq-q-text {
-  color: #E24B4A;
+  color: #FC1819;
 }
 
 .faq-icon {
@@ -121,8 +121,8 @@
 }
 
 .faq-item--open .faq-icon {
-  border-color: #C0292A;
-  color: #C0292A;
+  border-color: #FC1819;
+  color: #FC1819;
   transform: rotate(45deg);
 }
 

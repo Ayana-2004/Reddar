@@ -30,16 +30,16 @@ function HomePage() {
       <Hero />
       {/* MISSION STRIP */}
 <div style={{
-  background: "#0E0E0E",
+  background: "#111111",
   padding: "64px 24px",
   textAlign: "center",
 }}>
   <p style={{
     fontSize: "0.72rem",
-    fontWeight: 700,
+    fontWeight: 600,
     letterSpacing: "0.25em",
     textTransform: "uppercase",
-    color: "#C0292A",
+    color: "var(--red)",
     marginBottom: "16px",
   }}>
     RED for Life. RADAR for Hope.

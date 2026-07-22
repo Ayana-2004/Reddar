@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600&display=swap');
 
 html,
 body {
@@ -17,17 +17,16 @@ body {
 }
 
 :root {
-  --red: #C0292A;
-  --red-dark: #8B1A1A;
-  --red-light: #F7E8E8;
-  --red-mid: #E24B4A;
-  --black: #0E0E0E;
-  --off-white: #FAF8F5;
+  --red: #FC1819;
+  --red-dark: color-mix(in srgb, #FC1819 80%, black);
+  --red-mid: #FC1819;
+  --black: #111111;
+  --off-white: #FFFFFF;
   --warm-gray: #8A8580;
   --border: #E8E3DC;
-  --font-display: 'Bebas Neue', sans-serif;
-  --font-serif: 'DM Serif Display', serif;
-  --font-body: 'DM Sans', sans-serif;
+  --font-display: 'Lexend', sans-serif;
+  --font-serif: 'Lexend', sans-serif;
+  --font-body: 'Lexend', sans-serif;
 }
 body {
   margin: 0;

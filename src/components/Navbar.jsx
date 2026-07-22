@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import "./Navbar.css";
-import reddarLogo from "../assets/reddar-logo.png";
+import reddarLockup from "../assets/Reddar-red.svg";
 
 const navLinks = [
   { label: "How It Works", href: "#how" },
@@ -89,10 +89,8 @@ export default function Navbar() {
           navigate("/");
           window.scrollTo({ top: 0, behavior: "smooth" });
         }}>
-         <span className="navbar-logo-icon">
-  <img src={reddarLogo} alt="REDDAR" style={{ width: "36px", height: "36px", objectFit: "contain" }} />
-</span>
-          <span className="navbar-logo-text">REDDAR</span>
+          <img src={reddarLockup} alt="REDDAR" className="navbar-logo-mark" />
+          <span className="navbar-logo-tagline">Find blood donors near you, fast.</span>
         </a>
 
         {/* DESKTOP LINKS */}

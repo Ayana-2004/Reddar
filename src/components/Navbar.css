@@ -3,18 +3,18 @@
    ================================================ */
 
 .navbar-link--highlight {
-  color: #C0292A;
-  font-weight: 700;
+  color: #FC1819;
+  font-weight: 600;
 }
 
 .navbar-link--highlight:hover {
-  background: rgba(192,41,42,0.08);
-  color: #C0292A;
+  background: rgba(252, 24, 25,0.08);
+  color: #FC1819;
 }
 
 .navbar-mobile-link--highlight {
-  color: #C0292A;
-  font-weight: 700;
+  color: #FC1819;
+  font-weight: 600;
 }
 
 .navbar {
@@ -25,7 +25,7 @@
   width: 100%;                         /* ← FIX: ensure navbar never exceeds viewport */
   z-index: 1000;
   transition: background 0.3s, box-shadow 0.3s;
-  background: rgba(242, 242, 233, 0.96);
+  background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   box-shadow: 0 1px 0 rgba(0,0,0,0.08);
@@ -34,7 +34,7 @@
 }
 
 .navbar--scrolled {
-  background: rgba(242, 242, 233, 0.96);
+  background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   box-shadow: 0 1px 0 rgba(0,0,0,0.08);
@@ -52,37 +52,37 @@
   box-sizing: border-box;
 }
 
-/* ── LOGO ── */
+/* ── LOGO ──
+   Mark min height 40px per brand book; gap ≥ 0.3× mark height (12px) for clear space. */
 .navbar-logo {
   display: flex;
   align-items: center;
-  gap: 0.55rem;
+  gap: 0.8rem;
   text-decoration: none;
   flex-shrink: 0;
 }
 
-.navbar-logo-icon {
-  display: flex;
-  align-items: center;
-}
-
-.navbar-logo-icon svg,
-.navbar-logo-icon img {
-  width: 32px;
-  height: 32px;
+.navbar-logo-mark {
+  height: 40px;
+  width: auto;
   object-fit: contain;
+  display: block;
 }
 
-@keyframes logoSpin {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
-}
-
-.navbar-logo-text {
-  font-family: var(--font-display);
-  font-size: 1.65rem;
-  letter-spacing: 0.1em;
-  color: var(--red);
+.navbar-logo-tagline {
+  /* Hidden on the full desktop nav row — this bar's 1280px budget is
+     already spoken for by 8 links + CTA; showing it here clips them
+     (checked at 1024-1440px, overflow confirmed). Shown only under
+     960px, where links/CTA give way to the hamburger and there's room. */
+  display: none;
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--black);
+  opacity: 0.55;
+  white-space: nowrap;
   line-height: 1;
 }
 
@@ -113,7 +113,7 @@
 
 .navbar-link:hover {
   color: var(--red);
-  background: rgba(192, 41, 42, 0.06);
+  background: rgba(252, 24, 25, 0.06);
 }
 
 /* ── CTA BUTTON ── */
@@ -126,7 +126,7 @@
   padding: 0.6rem 1.3rem;
   border-radius: 3px;
   font-size: 0.8rem;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.07em;
   text-decoration: none;
   text-transform: uppercase;
@@ -144,13 +144,13 @@
 .navbar-cta:hover {
   background: var(--red-dark);
   transform: translateY(-1px);
-  box-shadow: 0 4px 16px rgba(192,41,42,0.35);
+  box-shadow: 0 4px 16px rgba(252, 24, 25,0.35);
   animation: none;
 }
 
 @keyframes ctaPulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(192,41,42,0); }
-  50%       { box-shadow: 0 0 0 6px rgba(192,41,42,0.18); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(252, 24, 25,0); }
+  50%       { box-shadow: 0 0 0 6px rgba(252, 24, 25,0.18); }
 }
 
 /* ── HAMBURGER ── */
@@ -198,7 +198,7 @@
 .navbar-mobile {
   display: none;
   flex-direction: column;
-  background: #F2F2E9;
+  background: #FFFFFF;
   border-top: 1px solid var(--border);
   padding: 0;
   max-height: 0;
@@ -232,7 +232,7 @@
 
 .navbar-mobile-link:hover {
   color: var(--red);
-  background: rgba(192,41,42,0.05);
+  background: rgba(252, 24, 25,0.05);
 }
 
 .navbar-mobile-cta {
@@ -243,7 +243,7 @@
   padding: 0.75rem 1.5rem;
   border-radius: 3px;
   font-size: 0.85rem;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.08em;
   text-decoration: none;
   text-transform: uppercase;
@@ -274,6 +274,10 @@
     display: flex;
   }
 
+  .navbar-logo-tagline {
+    display: block;
+  }
+
   .navbar-inner {
     padding: 0.9rem 1.2rem;
     max-width: 100%;
@@ -287,18 +291,18 @@
     gap: 0.5rem;
   }
 
-  .navbar-logo-text {
-    font-size: 1.35rem;
-  }
-
- .navbar-logo-icon {
-  width: 40px;
-  height: 40px;
-}
-
   .navbar-hamburger {
     width: 32px;
     height: 32px;
     min-width: 32px;
+  }
+}
+
+@media (max-width: 440px) {
+  /* Mark stays at the 40px brand-book minimum; tagline drops below this
+     width — measured overflow starting at 400px (hamburger pushed off
+     the visible area entirely), confirmed clear down to 420px. */
+  .navbar-logo-tagline {
+    display: none;
   }
 }

@@ -17,7 +17,7 @@
 
 /* ── LEFT ── */
 .hero-left {
-  background: #F2F2E9;
+  background: #FFFFFF;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -48,8 +48,8 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(192, 41, 42, 0.15);
-  border: 1px solid rgba(192, 41, 42, 0.3);
+  background: rgba(17, 17, 17, 0.04);
+  border: 1px solid rgba(17, 17, 17, 0.15);
   border-radius: 20px;
   padding: 0.4rem 1rem;
   margin-bottom: 1rem;
@@ -60,7 +60,7 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #E24B4A;
+  background: #FC1819;
   animation: pulseDot 1.6s ease-in-out infinite;
 }
 
@@ -74,12 +74,13 @@
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: #E24B4A;
+  color: #FC1819;
 }
 
 /* Title */
 .hero-title {
   font-family: var(--font-display);
+  font-weight: 600;
   font-size: clamp(3rem, 4.8vw, 5.5rem);
   line-height: 0.95;
   color: var(--black);
@@ -88,7 +89,7 @@
 }
 
 .hero-title-accent {
-  color: #E24B4A;
+  color: #FC1819;
 }
 
 /* Subtitle */
@@ -133,7 +134,7 @@
 
 .hero-btn-outline:hover {
   border-color: var(--red);
-  background: rgba(192, 41, 42, 0.1);
+  background: rgba(252, 24, 25, 0.1);
 }
 
 /* Store label */
@@ -173,14 +174,14 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(192,41,42,0.12) 0%, transparent 60%);
+  background: linear-gradient(135deg, rgba(252, 24, 25,0.12) 0%, transparent 60%);
   opacity: 0;
   transition: opacity 0.2s;
 }
 
 .store-btn:hover {
   background: #222;
-  border-color: rgba(192, 41, 42, 0.5);
+  border-color: rgba(252, 24, 25, 0.5);
   transform: translateY(-2px);
 }
 
@@ -233,7 +234,7 @@
 
 .hero-stat strong {
   font-size: 0.95rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--black);
   line-height: 1.2;
 }
@@ -253,7 +254,7 @@
 
 /* ── RIGHT — RADAR ── */
 .hero-right {
-  background: var(--red-dark);
+  background: var(--black);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -272,7 +273,7 @@
   position: absolute;
   inset: 0;
   background-image:
-    radial-gradient(circle at 70% 30%, rgba(192,41,42,0.25) 0%, transparent 60%),
+    radial-gradient(circle at 70% 30%, rgba(252, 24, 25,0.25) 0%, transparent 60%),
     radial-gradient(circle at 30% 70%, rgba(0,0,0,0.3) 0%, transparent 60%);
   z-index: 0;
 }
@@ -325,8 +326,8 @@
   background: conic-gradient(
     from 0deg,
     transparent 60%,
-    rgba(226, 75, 74, 0.08) 80%,
-    rgba(226, 75, 74, 0.25) 100%
+    rgba(252, 24, 25, 0.08) 80%,
+    rgba(252, 24, 25, 0.25) 100%
   );
   animation: sweep 3s linear infinite;
   transform-origin: center;
@@ -358,7 +359,7 @@
 }
 
 .radar-blip::after {
-  background: rgba(226, 75, 74, 0.4);
+  background: rgba(252, 24, 25, 0.4);
   animation: blipRing 3s ease-in-out infinite;
 }
 
@@ -384,13 +385,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  filter: drop-shadow(0 0 12px rgba(192,41,42,0.7));
+  filter: drop-shadow(0 0 12px rgba(252, 24, 25,0.7));
   animation: dropBreath 2.5s ease-in-out infinite;
 }
 
 @keyframes dropBreath {
-  0%, 100% { filter: drop-shadow(0 0 10px rgba(192,41,42,0.6)); transform: translate(-50%,-50%) scale(1); }
-  50%       { filter: drop-shadow(0 0 22px rgba(192,41,42,0.9)); transform: translate(-50%,-50%) scale(1.08); }
+  0%, 100% { filter: drop-shadow(0 0 10px rgba(252, 24, 25,0.6)); transform: translate(-50%,-50%) scale(1); }
+  50%       { filter: drop-shadow(0 0 22px rgba(252, 24, 25,0.9)); transform: translate(-50%,-50%) scale(1.08); }
 }
 
 .blood-drop-svg {
@@ -463,8 +464,8 @@
 
 .alert-title {
   font-size: 0.8rem;
-  font-weight: 700;
-  color: #0E0E0E;
+  font-weight: 600;
+  color: #111111;
   line-height: 1.2;
 }
 
@@ -479,7 +480,7 @@
   top: 10px; right: 10px;
   width: 8px; height: 8px;
   border-radius: 50%;
-  background: #C0292A;
+  background: #FC1819;
 }
 
 .alert-ping::before {
@@ -487,7 +488,7 @@
   position: absolute;
   inset: -4px;
   border-radius: 50%;
-  border: 1.5px solid #C0292A;
+  border: 1.5px solid #FC1819;
   animation: pingRing 1.4s ease-out infinite;
 }
 

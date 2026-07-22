@@ -3,7 +3,7 @@
    ================================================ */
 
 .rr {
-  background: #0E0E0E;
+  background: #111111;
   min-height: 100vh;
 }
 
@@ -15,7 +15,7 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: #0E0E0E;
+  background: #111111;
 }
 
 .rr-hero-bg {
@@ -29,7 +29,7 @@
 .rr-ring {
   position: absolute;
   border-radius: 50%;
-  border: 1px solid rgba(192, 41, 42, 0.12);
+  border: 1px solid rgba(252, 24, 25, 0.12);
   animation: rrRingPulse 4s ease-in-out infinite;
 }
 .rr-ring--1 { width: 700px; height: 700px; animation-delay: 0s; }
@@ -37,8 +37,8 @@
 .rr-ring--3 { width: 300px; height: 300px; animation-delay: 1.4s; }
 
 @keyframes rrRingPulse {
-  0%, 100% { border-color: rgba(192,41,42,0.08); }
-  50%       { border-color: rgba(192,41,42,0.22); }
+  0%, 100% { border-color: rgba(252, 24, 25,0.08); }
+  50%       { border-color: rgba(252, 24, 25,0.22); }
 }
 
 .rr-sweep {
@@ -49,8 +49,8 @@
   background: conic-gradient(
     from 0deg,
     transparent 60%,
-    rgba(192,41,42,0.04) 80%,
-    rgba(192,41,42,0.12) 100%
+    rgba(252, 24, 25,0.04) 80%,
+    rgba(252, 24, 25,0.12) 100%
   );
   animation: rrSweep 6s linear infinite;
 }
@@ -77,15 +77,15 @@
 .rr-eyebrow {
   display: inline-block;
   font-size: 0.68rem;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: #C0292A;
+  color: #FC1819;
   margin-bottom: 1.5rem;
   padding: 0.4rem 1.2rem;
-  border: 1px solid rgba(192,41,42,0.3);
+  border: 1px solid rgba(252, 24, 25,0.3);
   border-radius: 20px;
-  background: rgba(192,41,42,0.08);
+  background: rgba(252, 24, 25,0.08);
 }
 
 .rr-hero-title {
@@ -98,7 +98,7 @@
 }
 
 .rr-accent {
-  color: #C0292A;
+  color: #FC1819;
 }
 
 .rr-hero-sub {
@@ -113,12 +113,12 @@
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  background: #C0292A;
+  background: #FC1819;
   color: #fff;
   padding: 0.85rem 2rem;
   border-radius: 3px;
   font-size: 0.85rem;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.08em;
   text-decoration: none;
   text-transform: uppercase;
@@ -137,7 +137,7 @@
 
 /* ── STATS BAND ── */
 .rr-stats {
-  background: #C0292A;
+  background: var(--black);
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   padding: 2.5rem 4rem;
@@ -171,7 +171,7 @@
 
 /* ── ARTICLES ── */
 .rr-articles {
-  background: #F2F2E9;
+  background: #FFFFFF;
   padding: 6rem 2rem 8rem;
 }
 
@@ -208,13 +208,13 @@
 }
 
 .rr-filter-btn:hover {
-  border-color: rgba(192,41,42,0.3);
-  color: #C0292A;
+  border-color: rgba(252, 24, 25,0.3);
+  color: #FC1819;
 }
 
 .rr-filter-btn--active {
-  background: #C0292A;
-  border-color: #C0292A;
+  background: #FC1819;
+  border-color: #FC1819;
   color: #fff;
 }
 
@@ -252,7 +252,7 @@
 .rr-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 12px 32px rgba(0,0,0,0.08);
-  border-color: rgba(192,41,42,0.2);
+  border-color: rgba(252, 24, 25,0.2);
 }
 
 .rr-card--locked {
@@ -260,7 +260,7 @@
 }
 
 .rr-card--locked:hover {
-  border-color: rgba(192,41,42,0.15);
+  border-color: rgba(252, 24, 25,0.15);
 }
 
 .rr-card-new {
@@ -268,9 +268,9 @@
   top: 1.2rem;
   right: 1.2rem;
   font-size: 0.6rem;
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: 0.12em;
-  background: #C0292A;
+  background: var(--black);
   color: #fff;
   padding: 0.2rem 0.55rem;
   border-radius: 3px;
@@ -297,18 +297,18 @@
 
 .rr-card-tag {
   font-size: 0.65rem;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #C0292A;
+  color: #FC1819;
   display: block;
   margin-bottom: 0.9rem;
 }
 
 .rr-card-title {
   font-size: 1rem;
-  font-weight: 700;
-  color: #0E0E0E;
+  font-weight: 600;
+  color: #111111;
   line-height: 1.35;
   margin-bottom: 0.8rem;
 }
@@ -343,8 +343,8 @@
 
 .rr-card-read {
   font-size: 0.75rem;
-  font-weight: 700;
-  color: #C0292A;
+  font-weight: 600;
+  color: #FC1819;
   letter-spacing: 0.04em;
 }
 
@@ -356,7 +356,7 @@
 
 /* Login CTA */
 .rr-login-cta {
-  background: #0E0E0E;
+  background: #111111;
   border-radius: 16px;
   padding: 3rem;
 }
@@ -370,13 +370,13 @@
 .rr-login-icon {
   width: 56px;
   height: 56px;
-  background: rgba(192,41,42,0.15);
-  border: 1px solid rgba(192,41,42,0.3);
+  background: rgba(252, 24, 25,0.15);
+  border: 1px solid rgba(252, 24, 25,0.3);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #C0292A;
+  color: #FC1819;
   flex-shrink: 0;
 }
 
@@ -401,12 +401,12 @@
 .rr-login-btn {
   display: inline-flex;
   align-items: center;
-  background: #C0292A;
+  background: #FC1819;
   color: #fff;
   padding: 0.8rem 1.8rem;
   border-radius: 3px;
   font-size: 0.82rem;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.06em;
   text-decoration: none;
   text-transform: uppercase;

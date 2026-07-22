@@ -3,14 +3,14 @@
    ================================================ */
 
 .stories {
-  background: #F2F2E9;
+  background: #FFFFFF;
   min-height: 100vh;
   padding-top: 80px;
 }
 
 /* ── HERO ── */
 .stories-hero {
-  background: #0E0E0E;
+  background: #111111;
   padding: 6rem 2rem 5rem;
   position: relative;
   overflow: hidden;
@@ -22,7 +22,7 @@
   top: -200px; right: -200px;
   width: 600px; height: 600px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(192,41,42,0.08) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(252, 24, 25,0.08) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -36,15 +36,15 @@
 .stories-eyebrow {
   display: inline-block;
   font-size: 0.68rem;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: #C0292A;
+  color: #FC1819;
   margin-bottom: 1.5rem;
   padding: 0.4rem 1.2rem;
-  border: 1px solid rgba(192,41,42,0.3);
+  border: 1px solid rgba(252, 24, 25,0.3);
   border-radius: 20px;
-  background: rgba(192,41,42,0.08);
+  background: rgba(252, 24, 25,0.08);
 }
 
 .stories-title {
@@ -57,7 +57,7 @@
 }
 
 .stories-accent {
-  color: #C0292A;
+  color: #FC1819;
 }
 
 .stories-sub {
@@ -70,13 +70,13 @@
 .stories-hero-line {
   width: 100%;
   height: 1px;
-  background: linear-gradient(90deg, #C0292A, transparent);
+  background: linear-gradient(90deg, #FC1819, transparent);
   margin-top: 4rem;
 }
 
 /* ── STATS ── */
 .stories-stats {
-  background: #C0292A;
+  background: var(--black);
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   padding: 2.5rem 4rem;
@@ -137,7 +137,7 @@
 .story-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 16px 40px rgba(0,0,0,0.08);
-  border-color: rgba(192,41,42,0.2);
+  border-color: rgba(252, 24, 25,0.2);
 }
 
 .story-card-top {
@@ -149,9 +149,9 @@
 .story-blood-badge {
   font-family: var(--font-display);
   font-size: 1.1rem;
-  color: #C0292A;
-  background: rgba(192,41,42,0.08);
-  border: 1px solid rgba(192,41,42,0.2);
+  color: #111111;
+  background: rgba(17, 17, 17, 0.04);
+  border: 1px solid rgba(17, 17, 17, 0.15);
   padding: 0.25rem 0.75rem;
   border-radius: 4px;
   letter-spacing: 0.05em;
@@ -159,7 +159,7 @@
 
 .story-time-badge {
   font-size: 0.68rem;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: rgba(0,0,0,0.35);
@@ -171,7 +171,7 @@
 .story-title {
   font-family: var(--font-display);
   font-size: 1.25rem;
-  color: #0E0E0E;
+  color: #111111;
   line-height: 1.15;
   letter-spacing: 0.02em;
 }
@@ -190,7 +190,7 @@
 .story-quote-mark {
   font-family: var(--font-serif);
   font-size: 3rem;
-  color: rgba(192,41,42,0.15);
+  color: rgba(252, 24, 25,0.15);
   line-height: 0;
   vertical-align: -0.8rem;
   margin-right: 0.2rem;
@@ -214,12 +214,12 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: #C0292A;
+  background: #FC1819;
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 700;
+  font-weight: 600;
   font-size: 0.9rem;
   flex-shrink: 0;
 }
@@ -227,8 +227,8 @@
 .story-person-info strong {
   display: block;
   font-size: 0.82rem;
-  font-weight: 700;
-  color: #0E0E0E;
+  font-weight: 600;
+  color: #111111;
   line-height: 1.2;
 }
 
@@ -243,8 +243,8 @@
   align-items: center;
   gap: 0.35rem;
   font-size: 0.72rem;
-  font-weight: 700;
-  color: #C0292A;
+  font-weight: 600;
+  color: #FC1819;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   white-space: nowrap;
@@ -253,13 +253,13 @@
 .story-impact svg {
   width: 13px;
   height: 13px;
-  stroke: #C0292A;
+  stroke: #FC1819;
   flex-shrink: 0;
 }
 
 /* ── CTA ── */
 .stories-cta {
-  background: #0E0E0E;
+  background: #111111;
   padding: 6rem 2rem;
   margin-top: 4rem;
 }
@@ -273,10 +273,10 @@
 .stories-cta-eyebrow {
   display: inline-block;
   font-size: 0.68rem;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: #C0292A;
+  color: #FC1819;
   margin-bottom: 1rem;
 }
 
@@ -306,12 +306,12 @@
 .stories-btn-primary {
   display: inline-flex;
   align-items: center;
-  background: #C0292A;
+  background: #FC1819;
   color: #fff;
   padding: 0.85rem 2rem;
   border-radius: 3px;
   font-size: 0.85rem;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.06em;
   text-decoration: none;
   text-transform: uppercase;
@@ -332,7 +332,7 @@
   border-radius: 3px;
   border: 1px solid rgba(255,255,255,0.2);
   font-size: 0.85rem;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   cursor: pointer;
