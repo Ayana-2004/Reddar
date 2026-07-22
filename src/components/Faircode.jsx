@@ -1,5 +1,5 @@
 import "./Faircode.css";
-import faircodelogo from "../assets/Faircode.png";
+import faircodelogo from "../assets/Faircode_Logo_Full_Colour.svg";
 
 const contributions = [
   {

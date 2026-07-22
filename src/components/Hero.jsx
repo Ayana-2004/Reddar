@@ -47,9 +47,8 @@ export default function Hero() {
         </div>
 
         <h1 className="hero-title">
-          Life is<br />
-          Searching.<br />
-          <span className="hero-title-accent">Be Found.</span>
+         Find blood donors near you,
+          <span className="hero-title-accent">fast.</span>
         </h1>
 
         <p className="hero-sub">

@@ -1,5 +1,5 @@
 import "./Footer.css";
-import faircodelogo from "../assets/Faircode.png";
+import faircodelogo from "../assets/Faircode_Logo_Full_Colour.svg";
 import reddarLockup from "../assets/Reddar-red.svg";
 const playstoreUrl = "https://play.google.com/store/apps/details?id=YOUR_APP_ID";
 const appstoreUrl  = "https://apps.apple.com/app/YOUR_APP_ID";

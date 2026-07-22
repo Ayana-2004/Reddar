@@ -30,7 +30,7 @@ function HomePage() {
       <Hero />
       {/* MISSION STRIP */}
 <div style={{
-  background: "#2a2a2a",
+  background: "color-mix(in srgb, var(--red) 55%, black)",
   padding: "64px 24px",
   textAlign: "center",
 }}>

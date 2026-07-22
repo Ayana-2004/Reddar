@@ -76,9 +76,9 @@
      960px, where links/CTA give way to the hamburger and there's room. */
   display: none;
   font-family: var(--font-body);
-  font-size: 0.62rem;
+  font-size: 0.55rem;
   font-weight: 500;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--black);
   opacity: 0.55;
