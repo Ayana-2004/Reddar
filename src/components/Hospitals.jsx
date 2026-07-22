@@ -3,6 +3,30 @@ import "./Hospitals.css";
 
 const API_BASE = "https://blood-donation-u02c.onrender.com";
 
+const HospitalIcon = () => (
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M3 21h18" />
+    <path d="M5 21V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v14" />
+    <path d="M9 21v-3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3" />
+    <path d="M12 7v4M10 9h4" />
+  </svg>
+);
+
+const PinIcon = ({ className }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
+    <circle cx="12" cy="10" r="3" />
+  </svg>
+);
+
+const CarIcon = ({ className }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M3 13l1.5-4.5A2 2 0 0 1 6.4 7h11.2a2 2 0 0 1 1.9 1.5L21 13v5a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-1H6v1a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-5z" />
+    <circle cx="7.5" cy="17.5" r="1.5" />
+    <circle cx="16.5" cy="17.5" r="1.5" />
+  </svg>
+);
+
 const parseList = (data) => {
   if (Array.isArray(data)) return data;
   if (Array.isArray(data.hospitals)) return data.hospitals;
@@ -112,7 +136,7 @@ export default function Hospitals() {
           onClick={findNearby}
           disabled={nearbyLoading}
         >
-          {nearbyLoading ? "Locating..." : "📍 Find Nearby"}
+          {nearbyLoading ? "Locating..." : (<><PinIcon className="hospitals-btn-icon" /> Find Nearby</>)}
         </button>
       </div>
 
@@ -143,17 +167,17 @@ export default function Hospitals() {
           ) : (
             hospitals.map((h, i) => (
               <div className="hospital-card" key={h.id || i}>
-                <div className="hospital-card-icon">🏥</div>
+                <div className="hospital-card-icon"><HospitalIcon /></div>
                 <div className="hospital-card-body">
                   <h3 className="hospital-name">{h.name}</h3>
                   {h.city && (
                     <p className="hospital-location">
-                      📌 {h.city}{h.district ? `, ${h.district}` : ""}
+                      <PinIcon className="hospital-location-icon" /> {h.city}{h.district ? `, ${h.district}` : ""}
                     </p>
                   )}
                   {h.distance_km && (
                     <p className="hospital-distance">
-                      🚗 {Number(h.distance_km).toFixed(1)} km away
+                      <CarIcon className="hospital-distance-icon" /> {Number(h.distance_km).toFixed(1)} km away
                     </p>
                   )}
                 </div>

@@ -79,6 +79,9 @@
 .hospitals-search-btn:hover { background: #a02020; }
 
 .hospitals-nearby-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   background: #111111;
   color: #fff;
   border: none;
@@ -90,6 +93,12 @@
   white-space: nowrap;
   transition: background 0.2s;
   box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+}
+
+.hospitals-btn-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
 }
 
 .hospitals-nearby-btn:hover { background: #222; }
@@ -170,8 +179,15 @@
 }
 
 .hospital-card-icon {
-  font-size: 1.5rem;
+  width: 28px;
+  height: 28px;
+  color: #111111;
   flex-shrink: 0;
+}
+
+.hospital-card-icon svg {
+  width: 100%;
+  height: 100%;
 }
 
 .hospital-name {
@@ -183,15 +199,33 @@
 }
 
 .hospital-location {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
   font-size: 0.8rem;
   color: #8A8580;
   margin-bottom: 0.25rem;
 }
 
+.hospital-location-icon {
+  width: 13px;
+  height: 13px;
+  flex-shrink: 0;
+}
+
 .hospital-distance {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
   font-size: 0.8rem;
   color: #FC1819;
   font-weight: 600;
+}
+
+.hospital-distance-icon {
+  width: 13px;
+  height: 13px;
+  flex-shrink: 0;
 }
 
 @media (max-width: 900px) {
