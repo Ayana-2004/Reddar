@@ -11,7 +11,7 @@ import Footer from "./components/Footer";
 import RadarRoom from "./components/RadarRoom";
 import RadarRoomArticle from "./components/RadarRoomArticle";
 import Stories from "./components/Stories";
-import bannerImg from "./assets/reddar-banner.png";
+import bannerImg from "./assets/banner.webp";
 import Hospitals from './components/Hospitals';
 
   

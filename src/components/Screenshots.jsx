@@ -1,10 +1,10 @@
 import "./Screenshots.css";
-import ios1 from "../assets/ios1.png";
-import ios2 from "../assets/ios2.png";
-import ios3 from "../assets/ios3.png";
-import ios4 from "../assets/ios4.png";
-import ios5 from "../assets/ios5.png";
-import ios6 from "../assets/ios6.png";
+import ios1 from "../assets/android.webp";
+import ios2 from "../assets/android-2.webp";
+import ios3 from "../assets/android-3.webp";
+import ios4 from "../assets/android-4.webp";
+import ios5 from "../assets/android-5.webp";
+import ios6 from "../assets/android-6.webp";
 const screens = [
   { img: ios1, title: "Get Started", desc: "Choose your role — Donor, Recipient, or Both. One tap to join India's lifesaving radar." },
   { img: ios2, title: "Request Blood", desc: "Create urgent blood requests in seconds and connect with nearby donors instantly." },
