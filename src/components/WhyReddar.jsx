@@ -97,17 +97,17 @@ export default function WhyReddar() {
             <h3 className="why-highlight-title">Stay on the Radar.<br />Save Lives on Demand.</h3>
             <p className="why-highlight-desc">
               When you are Visible on Radar, nearby patients and healthcare providers
-              can discover you during emergencies. Switch to Stealth Mode whenever
+              can discover you during emergencies. Switch to Invisible whenever
               you are unavailable. You decide when you want to help.
             </p>
             <div className="why-highlight-modes">
               <div className="why-mode why-mode--visible">
                 <span className="why-mode-dot" />
-                Visible on Radar
+                Visible 
               </div>
               <div className="why-mode why-mode--stealth">
                 <span className="why-mode-dot" />
-                Stealth Mode
+                Invisible
               </div>
             </div>
           </div>
