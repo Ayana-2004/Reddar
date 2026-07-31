@@ -48,7 +48,7 @@ export default function Screenshots() {
         <p>Available free on both platforms</p>
         <div className="screenshots-store-row">
           <a
-            href="https://play.google.com/store/apps/details?id=YOUR_APP_ID"
+            href="https://play.google.com/store/apps/details?id=com.faircode.reddar&pli=1"
             target="_blank"
             rel="noopener noreferrer"
             className="store-btn-dark"
@@ -59,7 +59,7 @@ export default function Screenshots() {
             <span>Google Play</span>
           </a>
           <a
-            href="https://apps.apple.com/app/YOUR_APP_ID"
+            href="https://apps.apple.com/in/app/reddar-live-blood-connect/id6789000156"
             target="_blank"
             rel="noopener noreferrer"
             className="store-btn-dark"

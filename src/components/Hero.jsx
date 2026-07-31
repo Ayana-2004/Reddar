@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import "./Hero.css";
 
-const playstoreUrl = "https://play.google.com/store/apps/details?id=YOUR_APP_ID";
-const appstoreUrl  = "https://apps.apple.com/app/YOUR_APP_ID";
+const playstoreUrl = "https://play.google.com/store/apps/details?id=com.faircode.reddar&pli=1";
+const appstoreUrl  = "https://apps.apple.com/in/app/reddar-live-blood-connect/id6789000156";
 const API_BASE     = "https://blood-donation-u02c.onrender.com";
 
 export default function Hero() {
