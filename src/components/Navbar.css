@@ -306,3 +306,15 @@
     display: none;
   }
 }
+/* Route links are <a> (crawlable); match the button look */
+a.navbar-link {
+  display: inline-block;
+  line-height: normal;
+  text-decoration: none;
+}
+
+a.navbar-mobile-link {
+  display: block;
+  line-height: normal;
+  text-decoration: none;
+}

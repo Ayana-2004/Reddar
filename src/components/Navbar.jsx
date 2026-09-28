@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import "./Navbar.css";
 import reddarLockup from "../assets/Reddar-red.svg";
 
@@ -51,19 +51,10 @@ export default function Navbar() {
     }
   };
 
-  const handleRadarRoom = () => {
-    setMenuOpen(false);
-    navigate("/radar-room");
-  };
-
-  const handleStories = () => {
-    setMenuOpen(false);
-    navigate("/stories");
-  };
-  const handleHospitals = () => {
-  setMenuOpen(false);
-  navigate("/hospitals");
-};
+  // Route links are real <Link>s (crawlable); these only close the mobile menu.
+  const handleRadarRoom = () => setMenuOpen(false);
+  const handleStories = () => setMenuOpen(false);
+  const handleHospitals = () => setMenuOpen(false);
 
  const handleFaircode = () => {
     setMenuOpen(false);
@@ -84,7 +75,7 @@ export default function Navbar() {
       <div className="navbar-inner">
 
         {/* LOGO */}
-        <a href="#" className="navbar-logo" onClick={(e) => {
+        <a href="/" className="navbar-logo" onClick={(e) => {
           e.preventDefault();
           navigate("/");
           window.scrollTo({ top: 0, behavior: "smooth" });
@@ -100,16 +91,16 @@ export default function Navbar() {
               {l.label}
             </button>
           ))}
-          <button className="navbar-link" onClick={handleHospitals}>
+          <Link to="/hospitals" className="navbar-link" onClick={handleHospitals}>
   Hospitals
-</button>
-<button className="navbar-link navbar-link--highlight" onClick={handleRadarRoom}>
+</Link>
+<Link to="/radar-room" className="navbar-link navbar-link--highlight" onClick={handleRadarRoom}>
   Radar Room
-</button>
+</Link>
         
-          <button className="navbar-link" onClick={handleStories}>
+          <Link to="/stories" className="navbar-link" onClick={handleStories}>
             Stories
-          </button>
+          </Link>
           <button className="navbar-link" onClick={handleFaircode}>
             Faircode
           </button>
@@ -141,18 +132,18 @@ export default function Navbar() {
             {l.label}
           </button>
         ))}
-        <button className="navbar-mobile-link" onClick={handleHospitals}>
+        <Link to="/hospitals" className="navbar-mobile-link" onClick={handleHospitals}>
   Hospitals
-</button>
-<button className="navbar-mobile-link navbar-mobile-link--highlight" onClick={handleRadarRoom}>
+</Link>
+<Link to="/radar-room" className="navbar-mobile-link navbar-mobile-link--highlight" onClick={handleRadarRoom}>
   Radar Room
-</button>
+</Link>
         {/* <button className="navbar-mobile-link navbar-mobile-link--highlight" onClick={handleRadarRoom}>
           Radar Room
         </button> */}
-        <button className="navbar-mobile-link" onClick={handleStories}>
+        <Link to="/stories" className="navbar-mobile-link" onClick={handleStories}>
           Stories of Hope
-        </button>
+        </Link>
         <button className="navbar-mobile-link" onClick={handleFaircode}>
           Faircode Initiative
         </button>

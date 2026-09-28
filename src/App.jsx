@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import { useEffect } from "react"
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
@@ -13,10 +13,12 @@ import RadarRoomArticle from "./components/RadarRoomArticle";
 import Stories from "./components/Stories";
 import bannerImg from "./assets/banner.webp";
 import Hospitals from './components/Hospitals';
+import { useSeo } from './seo/head';
 
   
 function ScrollToTop() {
   const { pathname } = useLocation();
+  useSeo();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
@@ -91,7 +93,7 @@ function HomePage() {
 
 function App() {
   return (
-    <BrowserRouter>
+    <>
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -128,7 +130,7 @@ function App() {
         } />
 
       </Routes>
-    </BrowserRouter>
+    </>
   );
 }
 
