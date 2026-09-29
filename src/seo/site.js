@@ -243,7 +243,7 @@ export function buildLlmsTxt() {
     "Key facts:",
     "- Free for donors and recipients.",
     "- Available on Android and iOS.",
-    "- Donors can be \"Visible on Radar\" (available for matching) or switch to \"Stealth Mode\" (hidden from searches and alerts).",
+    "- Donors can be \"Visible on Radar\" (available for matching) or switch to \"Invisible\" (hidden from searches and alerts).",
     "- Recipients create a blood request with blood group, units, hospital and urgency; matching donors nearby are alerted.",
     "",
     "## App",

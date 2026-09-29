@@ -13,8 +13,8 @@ export const faqs = [
     a: "When you are Visible on Radar, your profile is available for matching when blood requests arise in your area. Nearby patients and healthcare providers can discover you during emergencies.",
   },
   {
-    q: "What is Stealth Mode?",
-    a: "Stealth Mode temporarily hides your profile from active donor searches and request alerts. You can switch back to visible anytime you are ready to help.",
+    q: "What does 'Invisible' mean?",
+    a: "Invisible temporarily hides your profile from active donor searches and request alerts. You can switch back to Visible anytime you are ready to help.",
   },
   {
     q: "How do I request blood?",
