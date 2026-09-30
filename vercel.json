@@ -1,5 +1,4 @@
 {
-  "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
     {
@@ -16,6 +15,10 @@
     }
   ],
   "rewrites": [
+    { "source": "/hospitals", "destination": "/hospitals.html" },
+    { "source": "/radar-room", "destination": "/radar-room.html" },
+    { "source": "/stories", "destination": "/stories.html" },
+    { "source": "/radar-room/:slug", "destination": "/radar-room/:slug.html" },
     { "source": "/(.*)", "destination": "/" }
   ],
   "headers": [

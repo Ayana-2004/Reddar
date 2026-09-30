@@ -22,7 +22,8 @@ for (const route of ssr.routes) {
     .replace("<!--seo-head-->", ssr.renderHeadTags(meta))
     .replace('<div id="root"></div>', `<div id="root">${ssr.render(route.path)}</div>`);
 
-  // "/" -> index.html, "/radar-room/x" -> radar-room/x.html (served cleanly via vercel.json cleanUrls)
+  // "/" -> index.html, "/radar-room/x" -> radar-room/x.html (served at the clean URL via vercel.json rewrites;
+  // cleanUrls is off so exact .html files like Google's verification file are not redirected)
   const file = route.path === "/" ? "index.html" : `${route.path.slice(1)}.html`;
   const out = path.join(dist, file);
   fs.mkdirSync(path.dirname(out), { recursive: true });
