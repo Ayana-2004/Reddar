@@ -8,8 +8,8 @@ import { faqs } from "../constants/faqs";
 import { articles } from "../components/Articles";
 import { articleContent } from "../constants/articleContent";
 
-// Change this one value when the production domain goes live.
-export const SITE_URL = "https://reddar-ayana-2004s-projects.vercel.app";
+// Production domain. reddar.in and the old *.vercel.app production aliases redirect here (vercel.json).
+export const SITE_URL = "https://www.reddar.in";
 
 export const SITE_NAME = "REDDAR";
 export const OG_IMAGE = `${SITE_URL}/og-image.png`;
