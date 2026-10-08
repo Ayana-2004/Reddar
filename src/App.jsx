@@ -17,11 +17,14 @@ import { useSeo } from './seo/head';
 
   
 function ScrollToTop() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
   useSeo();
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    // Links like "/#faq" (footer) should land on that section, not the top
+    const target = hash && document.getElementById(hash.slice(1));
+    if (target) target.scrollIntoView();
+    else window.scrollTo(0, 0);
+  }, [pathname, hash]);
   return null;
 }
 
@@ -38,7 +41,7 @@ function HomePage() {
   textAlign: "center",
 }}>
   <p style={{
-    fontSize: "0.8rem",
+    fontSize: "0.875rem",
     fontWeight: 600,
     letterSpacing: "0.25em",
     textTransform: "uppercase",

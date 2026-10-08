@@ -26,18 +26,24 @@ export default function FAQ() {
             <div
               className={`faq-item ${open === i ? "faq-item--open" : ""}`}
               key={i}
-              onClick={() => toggle(i)}
             >
-              <div className="faq-question">
+              {/* Whole row, "+" included, is one button: clickable and keyboard accessible */}
+              <button
+                type="button"
+                className="faq-question"
+                aria-expanded={open === i}
+                aria-controls={`faq-answer-${i}`}
+                onClick={() => toggle(i)}
+              >
                 <span className="faq-q-text">{item.q}</span>
-                <div className="faq-icon">
+                <span className="faq-icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <line x1="12" y1="5" x2="12" y2="19" className="faq-icon-v" />
                     <line x1="5" y1="12" x2="19" y2="12" />
                   </svg>
-                </div>
-              </div>
-              <div className="faq-answer">
+                </span>
+              </button>
+              <div className="faq-answer" id={`faq-answer-${i}`}>
                 <p>{item.a}</p>
               </div>
             </div>

@@ -1,15 +1,17 @@
+import { Link } from "react-router-dom";
 import "./Footer.css";
 import faircodelogo from "../assets/Faircode_Logo_Full_Colour.svg";
 import reddarLockup from "../assets/Reddar-red.svg";
 const playstoreUrl = "https://play.google.com/store/apps/details?id=com.faircode.reddar&pli=1";
 const appstoreUrl  = "https://apps.apple.com/in/app/reddar-live-blood-connect/id6789000156";
 
+// "/#..." so these work from every page, not only the homepage (App's ScrollToTop scrolls to the hash)
 const navLinks = [
-  { label: "How It Works",  href: "#how" },
-  { label: "Why REDDAR",    href: "#why" },
-  { label: "Knowledge Hub", href: "#knowledge" },
-  { label: "FAQ",           href: "#faq" },
-  { label: "About",         href: "#about" },
+  { label: "How It Works", href: "/#how" },
+  { label: "Why REDDAR",   href: "/#why" },
+  { label: "Radar Room",   to: "/radar-room" },
+  { label: "FAQ",          href: "/#faq" },
+  { label: "About",        href: "/#about" },
 ];
 
 const RadarLogo = () => (
@@ -87,7 +89,7 @@ export default function Footer() {
               </div>
               <p className="footer-tagline">Life on Radar.</p>
               <p className="footer-brand-desc">
-                India's real-time blood donor response network.
+                India's <span style={{ whiteSpace: "nowrap" }}>real-time</span> blood donor response network.
                 Connecting donors, recipients, and hospitals
                 when every second matters.
               </p>
@@ -97,8 +99,12 @@ export default function Footer() {
               <span className="footer-nav-title">Navigate</span>
               <ul>
                 {navLinks.map((l) => (
-                  <li key={l.href}>
-                    <a href={l.href} className="footer-nav-link">{l.label}</a>
+                  <li key={l.label}>
+                    {l.to ? (
+                      <Link to={l.to} className="footer-nav-link">{l.label}</Link>
+                    ) : (
+                      <a href={l.href} className="footer-nav-link">{l.label}</a>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -116,12 +122,11 @@ export default function Footer() {
 
          <div className="footer-bottom">
   <p className="footer-copy">
-    {new Date().getFullYear()} REDDAR. A social impact initiative by{" "}
+    © {new Date().getFullYear()} REDDAR. A social impact initiative by{" "}
     <a href="https://faircodetech.com/" target="_blank" rel="noopener noreferrer" className="footer-fc-link">
       <img src={faircodelogo} alt="Faircode Infotech" className="footer-fc-logo" />
     </a>
   </p>
-  <p className="footer-made">Made with purpose. Built for lives.</p>
 </div>
 
         </div>

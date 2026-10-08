@@ -1,6 +1,7 @@
 import { articles } from "./Articles";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import NoBreakHyphens from "./NoBreakHyphens";
 import "./RadarRoom.css";
 
 const categories = [
@@ -24,17 +25,10 @@ const stats = [
 
 export default function RadarRoom() {
   const [activeCategory, setActiveCategory] = useState("all");
-  const navigate = useNavigate();
 
   const filtered = activeCategory === "all"
     ? articles
     : articles.filter((a) => a.category === activeCategory);
-
-  const handleRead = (article) => {
-    if (!article.locked) {
-      navigate(`/radar-room/${article.slug}`);
-    }
-  };
 
   return (
     <div className="rr">
@@ -54,7 +48,7 @@ export default function RadarRoom() {
             Stay Informed.
           </h1>
           <p className="rr-hero-sub">
-            Educational content, research, and facts on blood donation, hematology, and health awareness — updated regularly for the REDDAR community.
+            Educational content, research, and facts on blood donation, hematology, and health awareness, updated regularly for the REDDAR community.
           </p>
           <a href="#articles" className="rr-hero-cta">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
@@ -96,20 +90,24 @@ export default function RadarRoom() {
               <article
                 className={`rr-card ${article.locked ? "rr-card--locked" : "rr-card--clickable"}`}
                 key={article.id}
-                onClick={() => handleRead(article)}
               >
-                {article.isNew && <span className="rr-card-new">NEW</span>}
-                {article.locked && (
-                  <div className="rr-card-lock">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-                      <path d="M7 11V7a5 5 0 0110 0v4" />
-                    </svg>
+                {/* NEW badge and lock side by side (they used to sit on top of each other) */}
+                {(article.isNew || article.locked) && (
+                  <div className="rr-card-badges">
+                    {article.isNew && <span className="rr-card-new">NEW</span>}
+                    {article.locked && (
+                      <span className="rr-card-lock" aria-label="Locked">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                          <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                          <path d="M7 11V7a5 5 0 0110 0v4" />
+                        </svg>
+                      </span>
+                    )}
                   </div>
                 )}
                 <span className="rr-card-tag">{article.tag}</span>
-                <h3 className="rr-card-title">{article.title}</h3>
-                <p className="rr-card-excerpt">{article.excerpt}</p>
+                <h3 className="rr-card-title"><NoBreakHyphens>{article.title}</NoBreakHyphens></h3>
+                <p className="rr-card-excerpt"><NoBreakHyphens>{article.excerpt}</NoBreakHyphens></p>
                 <div className="rr-card-footer">
                   <span className="rr-card-time">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -120,7 +118,8 @@ export default function RadarRoom() {
                   {article.locked ? (
                     <span className="rr-card-login">Login to read</span>
                   ) : (
-                    <span className="rr-card-read">Read →</span>
+                    // Real link (crawlable, keyboard focusable); its ::after covers the whole card
+                    <Link to={`/radar-room/${article.slug}`} className="rr-card-read">Read →</Link>
                   )}
                 </div>
               </article>

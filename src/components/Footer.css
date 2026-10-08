@@ -82,7 +82,8 @@
 .dl-ring {
   position: absolute;
   border-radius: 50%;
- border-bottom: 1px solid rgba(255,255,255,0.12);
+  /* full ring (was border-bottom only, so rings showed as faint partial arcs) */
+  border: 1px solid rgba(255,255,255,0.25);
 }
 .dl-ring.r1 { inset: 0; }
 .dl-ring.r2 { inset: 18%; }
@@ -95,8 +96,8 @@
   background: conic-gradient(
     from 0deg,
     transparent 60%,
-    rgba(255,255,255,0.06) 80%,
-    rgba(255,255,255,0.15) 100%
+    rgba(252,24,25,0.08) 80%,
+    rgba(252,24,25,0.3) 100%
   );
   animation: sweep 3s linear infinite;
 }
@@ -112,7 +113,7 @@
 }
 
 .dl-label {
-  font-size: 0.8rem;
+  font-size: 0.875rem;
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -179,7 +180,7 @@
 
 .dl-store-text small {
   font-size: 0.6rem;
-  opacity: 0.5;
+  opacity: 0.7;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   line-height: 1;
@@ -194,7 +195,7 @@
 
 .dl-note {
   font-size: 0.75rem;
-  color: rgba(255,255,255,0.5);
+  color: rgba(255,255,255,0.7);
   letter-spacing: 0.05em;
 }
 
@@ -244,7 +245,7 @@
 
 .footer-brand-desc {
   font-size: 0.83rem;
-  color: rgba(0,0,0,0.4);
+  color: rgba(0,0,0,0.65);
   line-height: 1.8;
   max-width: 280px;
 }
@@ -254,7 +255,7 @@
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(0,0,0,0.3);
+  color: rgba(0,0,0,0.55);
   display: block;
   margin-bottom: 1.2rem;
 }
@@ -270,7 +271,7 @@
 }
 .footer-nav-link {
   font-size: 0.85rem;
-  color: rgba(0,0,0,0.45);
+  color: rgba(0,0,0,0.7);
   text-decoration: none;
   transition: color 0.2s;
 }
@@ -289,7 +290,7 @@
 
 .footer-copy {
   font-size: 0.78rem;
-  color: rgba(0,0,0,0.5);
+  color: rgba(0,0,0,0.65);
   display: flex;
   align-items: center;
   gap: 0.6rem;
@@ -301,7 +302,7 @@
   align-items: center;
   text-decoration: none;
   transition: opacity 0.2s;
-  opacity: 0.7;
+  opacity: 1;
 }
 
 .footer-fc-link:hover {
@@ -320,7 +321,7 @@
 
 .footer-made {
   font-size: 0.75rem;
-  color: rgba(0,0,0,0.4);
+  color: rgba(0,0,0,0.6);
   font-style: italic;
 }
 

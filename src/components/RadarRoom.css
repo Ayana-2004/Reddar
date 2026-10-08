@@ -103,7 +103,7 @@
 
 .rr-hero-sub {
   font-size: 1rem;
-  color: rgba(255,255,255,0.45);
+  color: rgba(255,255,255,0.7);
   line-height: 1.8;
   max-width: 520px;
   margin: 0 auto 2.5rem;
@@ -246,40 +246,57 @@
   padding: 2rem;
   position: relative;
   transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+/* Only cards that open an article react like links. Locked cards used to lift
+   on hover too, then did nothing on click, which read as a glitch. */
+.rr-card--clickable {
   cursor: pointer;
 }
 
-.rr-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
-  border-color: rgba(252, 24, 25,0.2);
+@media (hover: hover) {
+  .rr-card--clickable:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+    border-color: rgba(252, 24, 25,0.2);
+  }
 }
 
-.rr-card--locked {
-  opacity: 0.75;
+/* Fills the gap under a lifted card so a cursor at its bottom edge does not flicker */
+.rr-card--clickable::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 6px;
 }
 
 .rr-card--locked:hover {
-  border-color: rgba(252, 24, 25,0.15);
+  border-color: rgba(0,0,0,0.12);
 }
 
-.rr-card-new {
+/* NEW badge and lock share one corner, side by side */
+.rr-card-badges {
   position: absolute;
   top: 1.2rem;
   right: 1.2rem;
-  font-size: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.rr-card-new {
+  font-size: 0.65rem;
   font-weight: 600;
   letter-spacing: 0.12em;
   background: var(--black);
   color: #fff;
-  padding: 0.2rem 0.55rem;
+  padding: 0.25rem 0.55rem;
   border-radius: 3px;
 }
 
 .rr-card-lock {
-  position: absolute;
-  top: 1.2rem;
-  right: 1.2rem;
   width: 28px;
   height: 28px;
   background: rgba(0,0,0,0.06);
@@ -287,7 +304,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: rgba(0,0,0,0.3);
+  color: rgba(0,0,0,0.6);
 }
 
 .rr-card-lock svg {
@@ -296,13 +313,14 @@
 }
 
 .rr-card-tag {
-  font-size: 0.65rem;
+  font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #FC1819;
   display: block;
   margin-bottom: 0.9rem;
+  padding-right: 5.5rem; /* keep clear of the badges */
 }
 
 .rr-card-title {
@@ -314,8 +332,8 @@
 }
 
 .rr-card-excerpt {
-  font-size: 0.83rem;
-  color: #8A8580;
+  font-size: 0.88rem;
+  color: #5F5A55; /* was #8A8580, 3.65:1; now 6.8:1 */
   line-height: 1.7;
   margin-bottom: 1.5rem;
 }
@@ -324,6 +342,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 1rem;
   border-top: 1px solid rgba(0,0,0,0.07);
   padding-top: 1rem;
 }
@@ -332,26 +351,48 @@
   display: flex;
   align-items: center;
   gap: 0.35rem;
-  font-size: 0.72rem;
-  color: rgba(0,0,0,0.35);
+  font-size: 0.78rem;
+  color: rgba(0,0,0,0.6); /* was 0.35, 2.3:1 */
+  white-space: nowrap;
 }
 
 .rr-card-time svg {
   width: 12px;
   height: 12px;
+  flex-shrink: 0;
 }
 
 .rr-card-read {
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   font-weight: 600;
-  color: #FC1819;
+  color: #D11415;
   letter-spacing: 0.04em;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* Stretch the link over the whole card, so clicking anywhere opens the article */
+.rr-card-read::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+}
+
+.rr-card-read:focus-visible {
+  outline: none;
+}
+
+.rr-card-read:focus-visible::after {
+  outline: 2px solid #FC1819;
+  outline-offset: 2px;
 }
 
 .rr-card-login {
-  font-size: 0.72rem;
-  color: rgba(0,0,0,0.3);
+  font-size: 0.78rem;
+  color: rgba(0,0,0,0.6); /* was 0.3, 2.1:1 */
   font-style: italic;
+  white-space: nowrap;
 }
 
 /* Login CTA */

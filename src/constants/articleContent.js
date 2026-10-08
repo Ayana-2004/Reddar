@@ -2,15 +2,15 @@
 export const articleContent = {
   "who-can-donate-blood": {
     body: [
-      { type: "p", text: "Blood donation saves millions of lives every year. In India alone, over 4.7 million units of blood are needed annually — yet many eligible donors never donate. Understanding eligibility is the first step." },
+      { type: "p", text: "Blood donation saves millions of lives every year. In India alone, over 4.7 million units of blood are needed annually, yet many eligible donors never donate. Understanding eligibility is the first step." },
       { type: "h2", text: "Basic Eligibility Criteria" },
       { type: "p", text: "Most healthy adults between 18 and 65 years of age, weighing over 50kg, are eligible to donate whole blood. You must be in good general health and feeling well on the day of donation." },
-      { type: "list", items: ["Age: 18–65 years", "Weight: Minimum 50 kg", "Hemoglobin: At least 12.5 g/dL", "Blood pressure: Normal range (systolic 100–180, diastolic 50–100)", "Pulse: 50–100 beats per minute, regular"] },
+      { type: "list", items: ["Age: 18 to 65 years", "Weight: Minimum 50 kg", "Hemoglobin: At least 12.5 g/dL", "Blood pressure: Normal range (systolic 100 to 180, diastolic 50 to 100)", "Pulse: 50 to 100 beats per minute, regular"] },
       { type: "h2", text: "Who Cannot Donate?" },
       { type: "p", text: "Certain conditions temporarily or permanently prevent donation. These include recent illness, certain medications, travel to malaria-endemic regions, and pregnancy." },
       { type: "list", items: ["Recent illness or fever in the last 2 weeks", "Pregnancy or recent childbirth (within 6 months)", "Recent surgery or dental work", "Tattoos or piercings within the last 6 months", "HIV, Hepatitis B or C diagnosis"] },
       { type: "h2", text: "How Often Can You Donate?" },
-      { type: "p", text: "Whole blood donors can donate once every 3 months (90 days). Platelet donors can donate more frequently — up to once every 2 weeks. Your body typically replenishes blood volume within 24–48 hours and red blood cells within 4–6 weeks." },
+      { type: "p", text: "Whole blood donors can donate once every 3 months (90 days). Platelet donors can donate more frequently, up to once every 2 weeks. Your body typically replenishes blood volume within 24 to 48 hours and red blood cells within 4 to 6 weeks." },
     ]
   },
   "blood-donation-myths-debunked": {
@@ -23,7 +23,7 @@ export const articleContent = {
       { type: "h2", text: "Myth 3: People with diabetes can't donate" },
       { type: "p", text: "Fact: Diabetics who are well-controlled and not on insulin are generally eligible to donate. Always consult with the donation center beforehand." },
       { type: "h2", text: "Myth 4: Donating blood is painful" },
-      { type: "p", text: "Fact: You may feel a brief pinch when the needle is inserted, but the donation itself (which takes about 8–10 minutes) is painless for most people." },
+      { type: "p", text: "Fact: You may feel a brief pinch when the needle is inserted, but the donation itself (which takes about 8 to 10 minutes) is painless for most people." },
       { type: "h2", text: "Myth 5: You need to fast before donating" },
       { type: "p", text: "Fact: You should actually eat a light meal and drink plenty of fluids before donating. Fasting can lead to dizziness and fainting." },
     ]
@@ -35,16 +35,16 @@ export const articleContent = {
       { type: "p", text: "The ABO blood group system classifies blood into four types based on the presence or absence of antigens on red blood cells: A, B, AB, and O." },
       { type: "list", items: ["Type A: Has A antigens, anti-B antibodies", "Type B: Has B antigens, anti-A antibodies", "Type AB: Has both antigens, no antibodies (universal recipient)", "Type O: No antigens, both anti-A and anti-B antibodies (universal donor)"] },
       { type: "h2", text: "The Rh System" },
-      { type: "p", text: "The Rh factor refers to the presence (+) or absence (–) of the RhD antigen. A person is either Rh-positive or Rh-negative. This matters enormously during pregnancy and transfusions." },
+      { type: "p", text: "The Rh factor refers to the presence (+) or absence (-) of the RhD antigen. A person is either Rh-positive or Rh-negative. This matters enormously during pregnancy and transfusions." },
       { type: "h2", text: "Why O Negative is the Universal Donor" },
       { type: "p", text: "O negative blood can be given to anyone regardless of their blood type. This makes it invaluable in emergencies when there's no time to determine the patient's blood type. O negative donors are always in critical demand." },
     ]
   },
   "48-hour-recovery-after-donating": {
     body: [
-      { type: "p", text: "You've just done something incredible — you've given the gift of life. Now it's time to take care of yourself so you recover quickly and feel your best." },
+      { type: "p", text: "You've just done something incredible: you've given the gift of life. Now it's time to take care of yourself so you recover quickly and feel your best." },
       { type: "h2", text: "Immediately After Donation" },
-      { type: "list", items: ["Rest for 10–15 minutes before leaving the donation center", "Drink extra fluids — at least 4 extra glasses in the next few hours", "Have a light snack provided at the center", "Avoid alcohol for 24 hours", "Keep the bandage on for at least 4–5 hours"] },
+      { type: "list", items: ["Rest for 10 to 15 minutes before leaving the donation center", "Drink extra fluids, at least 4 extra glasses in the next few hours", "Have a light snack provided at the center", "Avoid alcohol for 24 hours", "Keep the bandage on for at least 4 to 5 hours"] },
       { type: "h2", text: "What to Eat" },
       { type: "p", text: "Focus on iron-rich foods to help your body replenish red blood cells. Good options include red meat, fish, poultry, beans, spinach, iron-fortified cereals, and dried fruits." },
       { type: "p", text: "Pair iron-rich foods with Vitamin C (oranges, tomatoes, bell peppers) to boost iron absorption. Avoid tea and coffee with meals as they inhibit iron absorption." },

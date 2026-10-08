@@ -46,7 +46,7 @@
 }
 
 .faq-label {
-  font-size: 0.8rem;
+  font-size: 0.875rem;
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -65,7 +65,7 @@
 
 .faq-sub {
   font-size: 0.95rem;
-  color: rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.7);
   line-height: 1.7;
 }
 
@@ -78,8 +78,7 @@
 }
 
 .faq-item {
-  border-bottom: 1px solid rgba(255,255,255,0.07);
-  cursor: pointer;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
   transition: background 0.2s;
 }
 
@@ -87,12 +86,26 @@
   background: rgba(255,255,255,0.02);
 }
 
+/* The question row is a <button>: reset browser button styles */
 .faq-question {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
   padding: 1.6rem 0;
+  width: 100%;
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.faq-question:focus-visible {
+  outline: 2px solid #FC1819;
+  outline-offset: 4px;
+  border-radius: 4px;
 }
 
 .faq-q-text {
@@ -108,16 +121,20 @@
 }
 
 .faq-icon {
-  width: 28px;
-  height: 28px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.12);
+  border: 1.5px solid rgba(255,255,255,0.4);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  color: rgba(255,255,255,0.4);
+  color: #fff; /* was 40% white, barely visible */
   transition: border-color 0.2s, color 0.2s, transform 0.3s;
+}
+
+.faq-question:hover .faq-icon {
+  border-color: #FC1819;
 }
 
 .faq-item--open .faq-icon {
@@ -127,8 +144,8 @@
 }
 
 .faq-icon svg {
-  width: 14px;
-  height: 14px;
+  width: 18px;
+  height: 18px;
 }
 
 .faq-icon-v {
@@ -152,8 +169,8 @@
 }
 
 .faq-answer p {
-  font-size: 0.9rem;
-  color: rgba(255,255,255,0.45);
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.75);
   line-height: 1.8;
 }
 
