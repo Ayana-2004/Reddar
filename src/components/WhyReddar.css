@@ -36,7 +36,7 @@
 }
 
 .why-label {
-  font-size: 0.72rem;
+  font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -70,6 +70,7 @@
 }
 
 .why-card {
+  position: relative;
   background: #fff;
   border: 1px solid rgba(0,0,0,0.07);
   border-radius: 12px;
@@ -81,6 +82,17 @@
   border-color: rgba(252, 24, 25,0.3);
   transform: translateY(-4px);
   box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+}
+
+/* Fills the 4px gap left under a lifted card, so a cursor near the bottom edge
+   stays on the card instead of flickering between hover and not-hover */
+.why-card::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 6px;
 }
 
 .why-card-icon {
@@ -114,8 +126,9 @@
   border-radius: 16px;
   padding: 3.5rem;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+  /* Text takes the space; the radar column hugs the radar so both sides get the same 3.5rem edge */
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 4rem;
   align-items: center;
 }
 
@@ -124,7 +137,7 @@
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #FC1819;
+  color: #FF5A5B; /* lighter red for dark bg: 6.2:1 */
   display: block;
   margin-bottom: 1.2rem;
 }
@@ -139,27 +152,43 @@
 
 .why-highlight-desc {
   font-size: 0.9rem;
-  color: rgba(255,255,255,0.5);
+  color: rgba(255,255,255,0.7);
   line-height: 1.75;
   margin-bottom: 2rem;
 }
 
+/* Visible / Invisible switch: a pill with two options, the selected one filled */
 .why-highlight-modes {
-  display: flex;
-  gap: 1.5rem;
+  display: inline-flex;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 999px;
+  background: rgba(255,255,255,0.04);
 }
 
 .why-mode {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  padding: 0.55rem 1.1rem;
+  border: none;
+  border-radius: 999px;
+  background: transparent;
+  cursor: pointer;
+  font-family: inherit;
   font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.05em;
+  color: rgba(255,255,255,0.7);
+  transition: background 0.2s, color 0.2s;
 }
 
-.why-mode--visible { color: #4ade80; }
-.why-mode--stealth { color: rgba(255,255,255,0.35); }
+.why-mode:hover { color: #fff; }
+.why-mode:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+
+.why-mode--visible[aria-checked="true"] { color: #4ade80; background: rgba(74, 222, 128, 0.14); }
+.why-mode--stealth[aria-checked="true"] { color: #fff; background: rgba(255,255,255,0.14); }
 
 .why-mode-dot {
   width: 8px;
@@ -170,12 +199,31 @@
 
 .why-mode--visible .why-mode-dot {
   background: #4ade80;
+}
+
+.why-mode--visible[aria-checked="true"] .why-mode-dot {
   box-shadow: 0 0 8px #4ade80;
   animation: pulseDot 1.5s ease-in-out infinite;
 }
 
 .why-mode--stealth .why-mode-dot {
-  background: rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.6);
+}
+
+/* Invisible: you drop off the radar, so donor blips and the sweep fade out */
+.why-radar-mini .wrm-blip,
+.why-radar-mini .wrm-sweep,
+.why-radar-mini .wrm-center {
+  transition: opacity 0.3s, background 0.3s, box-shadow 0.3s;
+}
+.why-radar-mini.is-invisible .wrm-blip,
+.why-radar-mini.is-invisible .wrm-sweep {
+  animation: none; /* the blip pulse animates opacity and would override this */
+  opacity: 0;
+}
+.why-radar-mini.is-invisible .wrm-center {
+  background: rgba(255,255,255,0.35);
+  box-shadow: none;
 }
 
 /* Mini radar */
@@ -187,14 +235,14 @@
 
 .why-radar-mini {
   position: relative;
-  width: 260px;
-  height: 260px;
+  width: 280px;
+  height: 280px;
 }
 
 .wrm-ring {
   position: absolute;
   border-radius: 50%;
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.25); /* was 0.08, barely visible */
 }
 .wrm-ring.r1 { inset: 0; }
 .wrm-ring.r2 { inset: 20%; }

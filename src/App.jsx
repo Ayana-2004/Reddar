@@ -38,7 +38,7 @@ function HomePage() {
   textAlign: "center",
 }}>
   <p style={{
-    fontSize: "0.72rem",
+    fontSize: "0.8rem",
     fontWeight: 600,
     letterSpacing: "0.25em",
     textTransform: "uppercase",

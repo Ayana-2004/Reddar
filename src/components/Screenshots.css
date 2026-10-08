@@ -50,11 +50,11 @@
 }
 
 .screenshots-header .section-eyebrow {
-  color: var(--red-mid);
+  color: #FF5A5B; /* lighter red for dark bg: 6.2:1 */
 }
 
 .screenshots-header .section-body {
-  color: rgba(255,255,255,0.5);
+  color: rgba(255,255,255,0.7);
   margin: 0 auto;
   text-align: center;
 }
@@ -94,10 +94,12 @@
     0 0 0 1px rgba(255,255,255,0.05),
     0 24px 48px rgba(0,0,0,0.5);
   transition: transform 0.3s, box-shadow 0.3s;
-  aspect-ratio: 9/19;
+  /* Matches the 9:16 screenshots so nothing is cropped (9:19 cut ~16% of the width) */
+  aspect-ratio: 9/16;
 }
 
-.screenshot-phone:hover {
+/* Hover on the card, which never moves, so the lifted phone does not flicker */
+.screenshot-card:hover .screenshot-phone {
   transform: translateY(-8px) scale(1.02);
   box-shadow:
     0 0 0 1px rgba(252, 24, 25,0.3),
@@ -132,7 +134,7 @@
 .screenshot-num {
   font-family: var(--font-display);
   font-size: 2.5rem;
-  color: rgba(252, 24, 25,0.2);
+  color: #FF5A5B; /* was 20% red, 1.2:1 and near invisible */
   line-height: 1;
   display: block;
   margin-bottom: 0.3rem;
@@ -149,7 +151,7 @@
 .screenshot-info p {
   font-size: 0.82rem;
   line-height: 1.6;
-  color: rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.7);
   max-width: 160px;
   margin: 0 auto;
 }
@@ -166,7 +168,7 @@
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.3);
+  color: rgba(255,255,255,0.65);
   margin-bottom: 1.2rem;
 }
 

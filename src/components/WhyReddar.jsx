@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./WhyReddar.css";
 
 const features = [
@@ -65,6 +66,8 @@ const features = [
 ];
 
 export default function WhyReddar() {
+  const [mode, setMode] = useState("visible");
+
   return (
     <section className="why" id="why">
       <div className="why-inner">
@@ -100,19 +103,31 @@ export default function WhyReddar() {
               can discover you during emergencies. Switch to Invisible whenever
               you are unavailable. You decide when you want to help.
             </p>
-            <div className="why-highlight-modes">
-              <div className="why-mode why-mode--visible">
+            <div className="why-highlight-modes" role="radiogroup" aria-label="Donor visibility">
+              <button
+                type="button"
+                role="radio"
+                aria-checked={mode === "visible"}
+                className="why-mode why-mode--visible"
+                onClick={() => setMode("visible")}
+              >
                 <span className="why-mode-dot" />
-                Visible 
-              </div>
-              <div className="why-mode why-mode--stealth">
+                Visible
+              </button>
+              <button
+                type="button"
+                role="radio"
+                aria-checked={mode === "invisible"}
+                className="why-mode why-mode--stealth"
+                onClick={() => setMode("invisible")}
+              >
                 <span className="why-mode-dot" />
                 Invisible
-              </div>
+              </button>
             </div>
           </div>
           <div className="why-highlight-right">
-            <div className="why-radar-mini">
+            <div className={`why-radar-mini ${mode === "invisible" ? "is-invisible" : ""}`}>
               <div className="wrm-ring r1" />
               <div className="wrm-ring r2" />
               <div className="wrm-ring r3" />
