@@ -37,12 +37,20 @@ export default function Faircode() {
         <div className="fc-band-inner">
           <div className="fc-band-left">
             <span className="fc-powered">Powered by</span>
-            <img src={faircodelogo} alt="Faircode Infotech" className="fc-logo" />
+            <a
+              href="https://faircodetech.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="fc-logo-link"
+              aria-label="Faircode Infotech website (opens in a new tab)"
+            >
+              <img src={faircodelogo} alt="Faircode Infotech" className="fc-logo" />
+            </a>
           </div>
           <div className="fc-band-right">
            <p className="fc-band-quote">
-  "At Faircode, we believe innovation has its greatest value<br />
-  when it serves people. REDDAR is not a commercial venture.<br />
+  "At Faircode, we believe innovation has its greatest value
+  when it serves people. REDDAR is not a commercial venture.
   It is our contribution toward a stronger, more connected society."
 </p>
           </div>
@@ -94,7 +102,7 @@ export default function Faircode() {
           <div className="fc-vm-card fc-vm-mission">
             <span className="fc-vm-tag">Mission</span>
             <h3 className="fc-vm-title">
-              Make blood donation a<br />real-time lifesaving act.
+              Make blood donation a <span style={{ whiteSpace: "nowrap" }}>real-time</span> lifesaving act.
             </h3>
             <p className="fc-vm-desc">
               To leverage technology and community participation to make

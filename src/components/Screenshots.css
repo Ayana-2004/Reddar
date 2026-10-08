@@ -62,9 +62,10 @@
 /* ── CARD TRACK ── */
 .screenshots-track {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-  max-width: 1200px;
+  /* 6 screens = 2 full rows of 3; 4 columns left 2 empty slots in row two */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem 2rem;
+  max-width: 900px;
   margin: 0 auto 4rem;
 }
 
@@ -98,13 +99,27 @@
   aspect-ratio: 9/16;
 }
 
-/* Hover on the card, which never moves, so the lifted phone does not flicker */
-.screenshot-card:hover .screenshot-phone {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow:
-    0 0 0 1px rgba(252, 24, 25,0.3),
-    0 32px 64px rgba(252, 24, 25,0.2),
-    0 16px 32px rgba(0,0,0,0.5);
+/* No tap flash or image drag/select on click */
+.screenshot-card {
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+.phone-screen {
+  -webkit-user-drag: none;
+  pointer-events: none;
+}
+
+/* Hover on the card, which never moves, so the lifted phone does not flicker.
+   Only on devices that really hover: on touch screens a tap would leave it stuck lifted. */
+@media (hover: hover) {
+  .screenshot-card:hover .screenshot-phone {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow:
+      0 0 0 1px rgba(252, 24, 25,0.3),
+      0 32px 64px rgba(252, 24, 25,0.2),
+      0 16px 32px rgba(0,0,0,0.5);
+  }
 }
 
 .phone-notch {

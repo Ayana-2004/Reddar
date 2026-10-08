@@ -22,16 +22,15 @@
   }
 
   .fc-contrib-title {
-    font-size: 0.95rem;
+    font-size: 1.05rem;
   }
 
   .fc-contrib-desc {
-    font-size: 0.82rem;
+    font-size: 0.9rem;
   }
 
   .fc-statement {
     margin-bottom: 3rem;
-    padding-bottom: 3rem;
     gap: 1.5rem;
   }
 
@@ -77,12 +76,23 @@
 }
 
 .fc-powered {
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.3);
+  color: rgba(255,255,255,0.7); /* was 0.3, 2.65:1; now 9.5:1 */
 }
+
+/* Logo links to faircodetech.com */
+.fc-logo-link {
+  display: inline-block;
+  width: fit-content;
+  border-radius: 6px;
+  transition: opacity 0.2s;
+}
+
+.fc-logo-link:hover { opacity: 0.8; }
+.fc-logo-link:focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
 
 .fc-logo {
   height: 52px;
@@ -126,8 +136,6 @@
   gap: 5rem;
   align-items: start;
   margin-bottom: 5rem;
-  padding-bottom: 5rem;
-  border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 
 .fc-title {
@@ -174,16 +182,17 @@
 }
 
 .fc-vm-tag {
-  font-size: 0.65rem;
+  font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   display: block;
   margin-bottom: 1.5rem;
-  opacity: 0.5;
+  color: rgba(255,255,255,0.75);
 }
 
 .fc-vm-title {
+  text-wrap: balance;
   font-family: var(--font-display);
   font-size: clamp(1.4rem, 2vw, 2rem);
   line-height: 1.15;
@@ -192,9 +201,9 @@
 }
 
 .fc-vm-desc {
-  font-size: 0.87rem;
+  font-size: 0.95rem;
   line-height: 1.75;
-  color: rgba(255,255,255,0.6);
+  color: rgba(255,255,255,0.75);
 }
 
 /* Contributions */
@@ -238,14 +247,14 @@
 }
 
 .fc-contrib-num {
-  font-size: 0.65rem;
+  font-size: 0.85rem;
   font-weight: 600;
   letter-spacing: 0.15em;
-  color: rgba(0,0,0,0.2);
+  color: #C41415; /* was 20% black, 1.6:1 and near invisible; now 6.1:1 */
 }
 
 .fc-contrib-tag {
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   font-weight: 600;
   color: #FC1819;
   letter-spacing: 0.05em;
@@ -256,15 +265,15 @@
 }
 
 .fc-contrib-title {
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 600;
   color: #111111;
   margin-bottom: 0.5rem;
 }
 
 .fc-contrib-desc {
-  font-size: 0.85rem;
-  color: #8A8580;
+  font-size: 0.95rem;
+  color: #5F5A55; /* was #8A8580, 3.65:1; now 6.8:1 */
   line-height: 1.75;
 }
 
