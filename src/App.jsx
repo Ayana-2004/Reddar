@@ -16,6 +16,7 @@ import Hospitals from './components/Hospitals';
 import { useSeo } from './seo/head';
 import LegalPage from './components/LegalPage';
 import { contactPage } from './constants/legal';
+import { appPrivacyPolicy, APP_PRIVACY_EFFECTIVE } from './constants/appPrivacyPolicy';
 
   
 function ScrollToTop() {
@@ -131,6 +132,14 @@ function App() {
           <>
             <Navbar />
             <Stories />
+            <Footer />
+          </>
+        } />
+
+        <Route path="/privacy" element={
+          <>
+            <Navbar />
+            <LegalPage eyebrow="Legal" title="Privacy Policy" blocks={appPrivacyPolicy} updatedLabel={`Effective date: ${APP_PRIVACY_EFFECTIVE}`} />
             <Footer />
           </>
         } />

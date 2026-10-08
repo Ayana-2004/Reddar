@@ -8,14 +8,14 @@ function withEmailLinks(text) {
   );
 }
 
-export default function LegalPage({ eyebrow, title, blocks, showUpdated = true }) {
+export default function LegalPage({ eyebrow, title, blocks, showUpdated = true, updatedLabel }) {
   return (
     <div className="legal">
       <header className="legal-header">
         <div className="legal-inner">
           <span className="legal-eyebrow">{eyebrow}</span>
           <h1 className="legal-title">{title}</h1>
-          {showUpdated && <p className="legal-updated">Last updated: {LAST_UPDATED}</p>}
+          {showUpdated && <p className="legal-updated">{updatedLabel || `Last updated: ${LAST_UPDATED}`}</p>}
         </div>
       </header>
 
