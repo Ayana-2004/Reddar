@@ -152,6 +152,17 @@ const staticRoutes = [
     jsonLd: (r) =>
       graph(webPage(r.path, r.title, r.description), breadcrumbs([["Home", "/"], ["Stories", r.path]])),
   },
+  {
+    path: "/contact",
+    title: "Contact REDDAR",
+    description:
+      "Contact the REDDAR team at Faircode Infotech for questions about the app, your account, privacy or partnerships.",
+    jsonLd: (r) =>
+      graph(
+        { ...webPage(r.path, r.title, r.description, "ContactPage"), about: { "@id": ORG_ID } },
+        breadcrumbs([["Home", "/"], ["Contact", r.path]])
+      ),
+  },
 ];
 
 const articleRoutes = publishedArticles.map((a) => {

@@ -4,6 +4,9 @@ import faircodelogo from "../assets/Faircode_Logo_Full_Colour.svg";
 import reddarLockup from "../assets/Reddar-red.svg";
 const playstoreUrl = "https://play.google.com/store/apps/details?id=com.faircode.reddar&pli=1";
 const appstoreUrl  = "https://apps.apple.com/in/app/reddar-live-blood-connect/id6789000156";
+// The app's current official privacy policy (same link as the App Store listing).
+// Replace with "/privacy" once the website Privacy Policy is approved (branch legal-pages).
+const privacyPolicyUrl = "https://docs.google.com/document/d/1U7eKIowgbhc2jcXKE0Sx3nLuKjH5gGja7jFXv29MYgA/edit?usp=sharing";
 
 // "/#..." so these work from every page, not only the homepage (App's ScrollToTop scrolls to the hash)
 const navLinks = [
@@ -113,9 +116,9 @@ export default function Footer() {
             <div className="footer-nav">
               <span className="footer-nav-title">Legal</span>
               <ul>
-                <li><a href="#" className="footer-nav-link">Privacy Policy</a></li>
-                <li><a href="#" className="footer-nav-link">Terms of Service</a></li>
-                <li><a href="#" className="footer-nav-link">Contact Us</a></li>
+                <li><a href={privacyPolicyUrl} target="_blank" rel="noopener noreferrer" className="footer-nav-link">Privacy Policy</a></li>
+                {/* Terms of Service link returns when the drafted terms are approved (branch legal-pages) */}
+                <li><Link to="/contact" className="footer-nav-link">Contact Us</Link></li>
               </ul>
             </div>
           </div>

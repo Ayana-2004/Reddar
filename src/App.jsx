@@ -14,6 +14,8 @@ import Stories from "./components/Stories";
 import bannerImg from "./assets/banner.webp";
 import Hospitals from './components/Hospitals';
 import { useSeo } from './seo/head';
+import LegalPage from './components/LegalPage';
+import { contactPage } from './constants/legal';
 
   
 function ScrollToTop() {
@@ -129,6 +131,14 @@ function App() {
           <>
             <Navbar />
             <Stories />
+            <Footer />
+          </>
+        } />
+
+        <Route path="/contact" element={
+          <>
+            <Navbar />
+            <LegalPage eyebrow="Get in touch" title="Contact Us" blocks={contactPage} showUpdated={false} />
             <Footer />
           </>
         } />
