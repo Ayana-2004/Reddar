@@ -3,7 +3,7 @@ import "./WhyReddar.css";
 const features = [
   {
     title: "Real-Time Matching",
-    desc: "Donors and recipients are matched instantly based on blood group and location — no delays, no middlemen.",
+    desc: "Donors and recipients are matched instantly based on blood group and location, with no delays and no middlemen.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
         <circle cx="12" cy="12" r="10"/>

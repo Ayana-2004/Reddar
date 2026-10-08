@@ -5,7 +5,7 @@ const contributions = [
   {
     number: "01",
     title: "Wayanad Disaster Relief",
-    desc: "Deployed an ERP system to coordinate relief operations during the Wayanad disaster — managing resources, volunteers, and logistics in real time.",
+    desc: "Deployed an ERP system to coordinate relief operations during the Wayanad disaster, managing resources, volunteers, and logistics in real time.",
     tag: "Crisis Response",
   },
   {
@@ -17,7 +17,7 @@ const contributions = [
   {
     number: "03",
     title: "Community Welfare Projects",
-    desc: "Technology projects built for communities — from education platforms to healthcare support systems that reach people who need them most.",
+    desc: "Technology projects built for communities, from education platforms to healthcare support systems that reach people who need them most.",
     tag: "Community",
   },
   {
@@ -42,8 +42,8 @@ export default function Faircode() {
           <div className="fc-band-right">
            <p className="fc-band-quote">
   "At Faircode, we believe innovation has its greatest value<br />
-  when it serves people. REDDAR is not a commercial venture —<br />
-  it is our contribution toward a stronger, more connected society."
+  when it serves people. REDDAR is not a commercial venture.<br />
+  It is our contribution toward a stronger, more connected society."
 </p>
           </div>
         </div>
@@ -69,7 +69,7 @@ export default function Faircode() {
 </p>
 <p className="fc-statement-text">
   REDDAR represents our belief that technology should not only solve business
-  problems — it should save lives. When technology can help save lives,
+  problems. It should save lives. When technology can help save lives,
   we believe it should.
 </p>
 <p className="fc-statement-text">

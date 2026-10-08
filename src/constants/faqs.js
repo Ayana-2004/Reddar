@@ -18,11 +18,11 @@ export const faqs = [
   },
   {
     q: "How do I request blood?",
-    a: "Open the app, create a blood request, and provide the required details — blood group, units needed, hospital, and urgency level. REDDAR will immediately notify matching donors nearby.",
+    a: "Open the app, create a blood request, and provide the required details: blood group, units needed, hospital, and urgency level. REDDAR will immediately notify matching donors nearby.",
   },
   {
     q: "Is my personal information protected?",
-    a: "Yes. REDDAR follows strict privacy and security practices. Your contact information is only shared when necessary and according to the app's workflow — never publicly exposed.",
+    a: "Yes. REDDAR follows strict privacy and security practices. Your contact information is only shared when necessary and according to the app's workflow, and is never publicly exposed.",
   },
   {
     q: "Can I donate multiple times?",

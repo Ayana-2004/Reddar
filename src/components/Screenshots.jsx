@@ -6,7 +6,7 @@ import ios4 from "../assets/android-4.webp";
 import ios5 from "../assets/android-5.webp";
 import ios6 from "../assets/android-6.webp";
 const screens = [
-  { img: ios1, title: "Get Started", desc: "Choose your role — Donor, Recipient, or Both. One tap to join India's lifesaving radar." },
+  { img: ios1, title: "Get Started", desc: "Choose your role: Donor, Recipient, or Both. One tap to join India's lifesaving radar." },
   { img: ios2, title: "Request Blood", desc: "Create urgent blood requests in seconds and connect with nearby donors instantly." },
   { img: ios3, title: "One Tap To Help", desc: "Respond instantly to emergency blood requests near you." },
   { img: ios4, title: "Manage Requests", desc: "Monitor active requests and donor responses in one place." },

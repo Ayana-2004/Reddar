@@ -65,7 +65,7 @@ export default function HowItWorks() {
           <span className="hiw-label">The Process</span>
           <h2 className="hiw-title">How REDDAR Works</h2>
           <p className="hiw-sub">
-            From registration to response — simple, fast, and built for emergencies.
+            From registration to response: simple, fast, and built for emergencies.
           </p>
         </div>
 

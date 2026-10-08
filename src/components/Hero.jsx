@@ -11,8 +11,12 @@ export default function Hero() {
 
   useEffect(() => {
     fetch(`${API_BASE}/stats`)
-      .then(r => r.json())
-      .then(data => setStats(data))
+      .then(r => (r.ok ? r.json() : null))
+      .then(data => {
+        // Only keep a full set of numbers; otherwise the stats row stays hidden.
+        const keys = ["total_donors", "total_fulfilled", "total_hospitals"];
+        if (data && keys.every(k => Number.isFinite(Number(data[k])))) setStats(data);
+      })
       .catch(() => {});
   }, []);
 
@@ -47,7 +51,7 @@ export default function Hero() {
         </div>
 
         <h1 className="hero-title">
-         Find blood donors near you,
+         Find blood donors near you,{" "}
           <span className="hero-title-accent">fast.</span>
         </h1>
 
@@ -57,7 +61,7 @@ export default function Hero() {
         </p>
 
         <p className="hero-sub hero-sub-italic">
-          India's community-powered blood response network — powered by people, driven by humanity.
+          India's community-powered blood response network, powered by people and driven by humanity.
         </p>
 
         {/* CTA ROW */}
@@ -92,23 +96,25 @@ export default function Hero() {
           </a>
         </div>
 
-        {/* LIVE STATS */}
-        <div className="hero-stats">
-          <div className="hero-stat">
-            <strong>{stats ? stats.total_donors : "—"}</strong>
-            <span>Donors</span>
+        {/* LIVE STATS: shown only once real numbers load, never as placeholders */}
+        {stats && (
+          <div className="hero-stats">
+            <div className="hero-stat">
+              <strong>{stats.total_donors}</strong>
+              <span>Donors</span>
+            </div>
+            <div className="hero-stat-divider" />
+            <div className="hero-stat">
+              <strong>{stats.total_fulfilled}</strong>
+              <span>Lives Helped</span>
+            </div>
+            <div className="hero-stat-divider" />
+            <div className="hero-stat">
+              <strong>{stats.total_hospitals}</strong>
+              <span>Hospitals</span>
+            </div>
           </div>
-          <div className="hero-stat-divider" />
-          <div className="hero-stat">
-            <strong>{stats ? stats.total_fulfilled : "—"}</strong>
-            <span>Lives Helped</span>
-          </div>
-          <div className="hero-stat-divider" />
-          <div className="hero-stat">
-            <strong>{stats ? stats.total_hospitals : "—"}</strong>
-            <span>Hospitals</span>
-          </div>
-        </div>
+        )}
 
       </div>
 
@@ -143,7 +149,7 @@ export default function Hero() {
           </div>
           <div>
             <p className="alert-title">Urgent Request Nearby</p>
-            <p className="alert-sub">B+ · GMC Kozhikode · 0.9 km</p>
+            <p className="alert-sub">B+ · GMC Kozhikode · 0.9&nbsp;km</p>
           </div>
           <div className="alert-ping" />
         </div>

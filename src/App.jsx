@@ -32,7 +32,8 @@ function HomePage() {
       <Hero />
       {/* MISSION STRIP */}
 <div style={{
-  background: "color-mix(in srgb, var(--red) 55%, black)",
+  // Soft shade at the top so the strip eases out of the white/black hero instead of a hard edge
+  background: "linear-gradient(180deg, rgba(0,0,0,0.35) 0, rgba(0,0,0,0) 96px), color-mix(in srgb, var(--red) 55%, black)",
   padding: "64px 24px",
   textAlign: "center",
 }}>
@@ -41,7 +42,7 @@ function HomePage() {
     fontWeight: 600,
     letterSpacing: "0.25em",
     textTransform: "uppercase",
-    color: "var(--red)",
+    color: "#FF9C9D", // light red: brand red on this dark red was ~2.4:1 contrast, this is ~4.9:1
     marginBottom: "16px",
   }}>
     RED for Life. RADAR for Hope.
@@ -59,13 +60,13 @@ function HomePage() {
   </h2>
   <p style={{
     fontSize: "1rem",
-    color: "rgba(255,255,255,0.55)",
+    color: "rgba(255,255,255,0.85)", // was 0.55 (~3.7:1); 0.85 is ~7:1 on this red
     lineHeight: 1.8,
     maxWidth: "560px",
     margin: "0 auto",
   }}>
     Stay visible. Receive alerts. Respond when you can. Because sometimes 
-    the difference between panic and hope is knowing someone is out there.
+    the difference between panic and hope is knowing someone is out&nbsp;there.
   </p>
 </div>
 <HowItWorks />

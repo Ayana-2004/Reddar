@@ -5,7 +5,8 @@
 .rra {
   background: #FFFFFF;
   min-height: 100vh;
-  padding-top: 80px;
+  /* Follows the real navbar height (taller on mobile with the tagline), never less than 80px */
+  padding-top: max(80px, var(--navbar-height, 80px));
 }
 
 /* Back button */

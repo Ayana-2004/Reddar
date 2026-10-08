@@ -70,18 +70,18 @@
 }
 
 .navbar-logo-tagline {
-  /* Hidden on the full desktop nav row — this bar's 1280px budget is
-     already spoken for by 8 links + CTA; showing it here clips them
-     (checked at 1024-1440px, overflow confirmed). Shown only under
-     960px, where links/CTA give way to the hamburger and there's room. */
+  /* Hidden on the full desktop nav row: 8 links + CTA use the whole bar, and
+     the tagline (even stacked under the logo) pushes the CTA off-screen at
+     1240-1366px. The hero H1 right below repeats the same line on desktop.
+     Shown stacked under the logo below 1240px (fits down to 320px). */
   display: none;
   font-family: var(--font-body);
-  font-size: 0.55rem;
+  font-size: 0.6rem;
   font-weight: 500;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--black);
-  opacity: 0.55;
+  opacity: 0.7;
   white-space: nowrap;
   line-height: 1;
 }
@@ -256,8 +256,10 @@
   background: var(--red-dark);
 }
 
-/* ── RESPONSIVE ── */
-@media (max-width: 960px) {
+/* ── RESPONSIVE ──
+   Hamburger below 1240px: measured, the full row (8 links + CTA) only fits
+   from 1240px; at 961-1220px the Download App button was cut off. */
+@media (max-width: 1239px) {
   .navbar-links {
     display: none;
   }
@@ -272,6 +274,13 @@
 
   .navbar-mobile {
     display: flex;
+  }
+
+  /* Tagline under the logo, keeping the brand book's 12px clear space from the mark */
+  .navbar-logo {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
   }
 
   .navbar-logo-tagline {
@@ -298,14 +307,6 @@
   }
 }
 
-@media (max-width: 440px) {
-  /* Mark stays at the 40px brand-book minimum; tagline drops below this
-     width — measured overflow starting at 400px (hamburger pushed off
-     the visible area entirely), confirmed clear down to 420px. */
-  .navbar-logo-tagline {
-    display: none;
-  }
-}
 /* Route links are <a> (crawlable); match the button look */
 a.navbar-link {
   display: inline-block;
