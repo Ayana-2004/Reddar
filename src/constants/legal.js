@@ -13,6 +13,7 @@
 export const LEGAL_ENTITY = "Faircode Infotech Pvt Ltd";
 export const LEGAL_ADDRESS = "B4, Pais Avenue, Water Land Road, Chilavannoor, Kochi, Kerala 682020, India";
 export const CONTACT_EMAIL = "info@faircodetech.com";
+export const COMPANY_WEBSITE = "https://faircodetech.com/";
 export const LAST_UPDATED = "8 October 2026";
 
 // Block types: h2, p, list. Email addresses in text are turned into mailto links.
@@ -145,6 +146,8 @@ export const contactPage = [
   { type: "p", text: `For questions about REDDAR, your account, privacy or partnerships, email ${CONTACT_EMAIL}.` },
   { type: "h2", text: "Delete your account" },
   { type: "p", text: "You can delete your account and data yourself at any time: open the REDDAR app, go to your Profile page and tap \"Delete Account\"." },
+  { type: "h2", text: "Company website" },
+  { type: "p", text: `REDDAR is built by ${LEGAL_ENTITY}. Learn more about us at ${COMPANY_WEBSITE}` },
   { type: "h2", text: "Office" },
   { type: "p", text: `${LEGAL_ENTITY}, ${LEGAL_ADDRESS}` },
 ];

@@ -4,7 +4,7 @@
 // uses the company address and email instead of faircodelabs.dev@gmail.com.
 // Keep the Google Doc and store listings in step with this text.
 // The expanded website policy waiting for approval is on branch legal-pages.
-import { LEGAL_ENTITY, LEGAL_ADDRESS, CONTACT_EMAIL } from "./legal";
+import { LEGAL_ENTITY, LEGAL_ADDRESS, CONTACT_EMAIL, COMPANY_WEBSITE } from "./legal";
 
 export const APP_PRIVACY_EFFECTIVE = "June 4, 2026";
 export const APP_PRIVACY_UPDATED = "9 October 2026";
@@ -107,7 +107,8 @@ export const appPrivacyPolicy = [
     "items": [
       LEGAL_ENTITY,
       `Address: ${LEGAL_ADDRESS}`,
-      `Email: ${CONTACT_EMAIL}`
+      `Email: ${CONTACT_EMAIL}`,
+      `Website: ${COMPANY_WEBSITE}`
     ]
   }
 ];

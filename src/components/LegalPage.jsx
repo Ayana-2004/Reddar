@@ -1,11 +1,14 @@
 import { LAST_UPDATED } from "../constants/legal";
 import "./LegalPage.css";
 
-// Turns email addresses inside plain text into mailto links.
+// Turns email addresses and https links inside plain text into real links.
 function withEmailLinks(text) {
-  return text.split(/([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,})/).map((part, i) =>
-    i % 2 === 1 ? <a key={i} href={`mailto:${part}`}>{part}</a> : part
-  );
+  return text.split(/(https?:\/\/\S*[^\s.,;:]|[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,})/).map((part, i) => {
+    if (i % 2 === 0) return part;
+    return part.startsWith("http")
+      ? <a key={i} href={part} target="_blank" rel="noopener noreferrer">{part}</a>
+      : <a key={i} href={`mailto:${part}`}>{part}</a>;
+  });
 }
 
 export default function LegalPage({ eyebrow, title, blocks, showUpdated = true, updatedLabel }) {
