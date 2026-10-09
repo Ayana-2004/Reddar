@@ -9,7 +9,7 @@ const appstoreUrl  = "https://apps.apple.com/in/app/reddar-live-blood-connect/id
 const navLinks = [
   { label: "How It Works", href: "/#how" },
   { label: "Why REDDAR",   href: "/#why" },
-  { label: "Radar Room",   to: "/radar-room" },
+  { label: "Reddar Room",  to: "/radar-room" },
   { label: "FAQ",          href: "/#faq" },
   { label: "About",        href: "/#about" },
 ];

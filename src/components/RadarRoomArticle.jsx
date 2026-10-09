@@ -2,6 +2,7 @@ import { Link, useParams, useNavigate } from "react-router-dom";
 import { articles } from "./Articles";
 import { articleContent } from "../constants/articleContent";
 import { PLAY_STORE_URL, APP_STORE_URL } from "../seo/site";
+import NoBreakHyphens from "./NoBreakHyphens";
 import "./RadarRoomArticle.css";
 
 export default function RadarRoomArticle() {
@@ -17,7 +18,7 @@ export default function RadarRoomArticle() {
         <div className="rra-notfound-inner">
           <h1>Article not found</h1>
           <button onClick={() => navigate("/radar-room")} className="rra-back-btn">
-            ← Back to Radar Room
+            ← Back to Reddar Room
           </button>
         </div>
       </div>
@@ -31,14 +32,14 @@ export default function RadarRoomArticle() {
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
           <path d="M19 12H5M12 5l-7 7 7 7" />
         </svg>
-        Back to Radar Room
+        Back to Reddar Room
       </button>
 
       {/* Article Header */}
       <header className="rra-header">
         <div className="rra-header-inner">
           <span className="rra-tag">{article.tag}</span>
-          <h1 className="rra-title">{article.title}</h1>
+          <h1 className="rra-title"><NoBreakHyphens>{article.title}</NoBreakHyphens></h1>
           <div className="rra-meta">
             <span className="rra-time">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -47,7 +48,7 @@ export default function RadarRoomArticle() {
               {article.readTime}
             </span>
             <span className="rra-divider" />
-            <span className="rra-source">REDDAR Radar Room</span>
+            <span className="rra-source">Reddar Room</span>
           </div>
         </div>
       </header>
@@ -56,11 +57,11 @@ export default function RadarRoomArticle() {
       <main className="rra-body">
         <div className="rra-body-inner">
           {content.body.map((block, i) => {
-            if (block.type === "p") return <p key={i} className="rra-p">{block.text}</p>;
+            if (block.type === "p") return <p key={i} className="rra-p"><NoBreakHyphens>{block.text}</NoBreakHyphens></p>;
             if (block.type === "h2") return <h2 key={i} className="rra-h2">{block.text}</h2>;
             if (block.type === "list") return (
               <ul key={i} className="rra-list">
-                {block.items.map((item, j) => <li key={j}>{item}</li>)}
+                {block.items.map((item, j) => <li key={j}><NoBreakHyphens>{item}</NoBreakHyphens></li>)}
               </ul>
             );
             return null;

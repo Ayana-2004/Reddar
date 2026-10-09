@@ -319,3 +319,14 @@ a.navbar-mobile-link {
   line-height: normal;
   text-decoration: none;
 }
+
+/* Current page / section in view */
+.navbar-link--active {
+  color: var(--red);
+  box-shadow: inset 0 -2px 0 var(--red);
+}
+
+.navbar-mobile-link--active {
+  color: var(--red);
+  box-shadow: inset 3px 0 0 var(--red);
+}

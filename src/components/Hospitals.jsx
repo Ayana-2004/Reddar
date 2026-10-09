@@ -34,6 +34,8 @@ const parseList = (data) => {
   return [];
 };
 
+const UNAVAILABLE = "The hospital directory is not available right now. Please try again in a few minutes.";
+
 export default function Hospitals() {
   const [search, setSearch] = useState("");
   const [hospitals, setHospitals] = useState([]);
@@ -42,16 +44,27 @@ export default function Hospitals() {
   const [error, setError] = useState(null);
   const [mode, setMode] = useState("search");
 
+  // Fails after 12s instead of spinning forever when the server is slow or down
+  const fetchHospitals = async (url) => {
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), 12000);
+    try {
+      const res = await fetch(url, { signal: ctrl.signal });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      return parseList(await res.json());
+    } finally {
+      clearTimeout(timer);
+    }
+  };
+
   const searchHospitals = async (query) => {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch(`${API_BASE}/hospitals?search=${query}&limit=50`);
-      const data = await res.json();
-      console.log("Search response:", data);
-      setHospitals(parseList(data));
+      setHospitals(await fetchHospitals(`${API_BASE}/hospitals?search=${encodeURIComponent(query)}&limit=50`));
     } catch {
-      setError("Failed to load hospitals. Please try again.");
+      setHospitals([]);
+      setError(UNAVAILABLE);
     } finally {
       setLoading(false);
     }
@@ -65,33 +78,33 @@ export default function Hospitals() {
       async (pos) => {
         try {
           const { latitude: lat, longitude: lng } = pos.coords;
-          const res = await fetch(`${API_BASE}/hospitals/nearby?lat=${lat}&lng=${lng}&radius_km=40&limit=50`);
-          const data = await res.json();
-          console.log("Nearby response:", data);
-          setHospitals(parseList(data));
+          setHospitals(await fetchHospitals(`${API_BASE}/hospitals/nearby?lat=${lat}&lng=${lng}&radius_km=40&limit=50`));
         } catch {
-          setError("Failed to load nearby hospitals.");
+          setHospitals([]);
+          setError(UNAVAILABLE);
         } finally {
           setNearbyLoading(false);
         }
       },
-      () => {
-        setError("Location access denied. Please enable location and try again.");
+      (err) => {
+        setError(err.code === 1
+          ? "Location access was denied. Allow location in your browser settings, or search by name instead."
+          : "We couldn't get your location. Please try again, or search by name instead.");
         setNearbyLoading(false);
-      }
+      },
+      { timeout: 15000, maximumAge: 300000 }
     );
   };
+
+  const retry = () => (mode === "nearby" ? findNearby() : searchHospitals(search));
 
   useEffect(() => {
     const loadAll = async () => {
       setLoading(true);
       try {
-        const res = await fetch(`${API_BASE}/hospitals?limit=50`);
-        const data = await res.json();
-        console.log("API response:", data);
-        setHospitals(parseList(data));
+        setHospitals(await fetchHospitals(`${API_BASE}/hospitals?limit=50`));
       } catch {
-        setError("Failed to load hospitals.");
+        setError(UNAVAILABLE);
       } finally {
         setLoading(false);
       }
@@ -140,7 +153,8 @@ export default function Hospitals() {
         </button>
       </div>
 
-      {/* RESULTS COUNT */}
+      {/* RESULTS COUNT (hidden on error so it never says "0 hospitals found" when the server is down) */}
+      {!error && (
       <div className="hospitals-meta">
         {loading || nearbyLoading ? (
           <span>Loading...</span>
@@ -148,9 +162,15 @@ export default function Hospitals() {
           <span>{hospitals.length} hospitals found {mode === "nearby" ? "near you" : ""}</span>
         )}
       </div>
+      )}
 
       {/* ERROR */}
-      {error && <div className="hospitals-error">{error}</div>}
+      {error && (
+        <div className="hospitals-error" role="alert">
+          <span>{error}</span>
+          <button type="button" className="hospitals-retry" onClick={retry}>Try again</button>
+        </div>
+      )}
 
       {/* HOSPITALS GRID */}
       {loading || nearbyLoading ? (
@@ -158,7 +178,7 @@ export default function Hospitals() {
           <div className="hospitals-spinner" />
           <p>Finding hospitals...</p>
         </div>
-      ) : (
+      ) : error ? null : (
         <div className="hospitals-grid">
           {hospitals.length === 0 ? (
             <div className="hospitals-empty">

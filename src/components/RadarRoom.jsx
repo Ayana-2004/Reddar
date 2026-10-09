@@ -41,7 +41,7 @@ export default function RadarRoom() {
           <div className="rr-sweep" />
         </div>
         <div className="rr-hero-inner">
-          <span className="rr-eyebrow">RADAR ROOM</span>
+          <span className="rr-eyebrow">REDDAR ROOM</span>
           <h1 className="rr-hero-title">
             Learn.<br />
             <span className="rr-accent">Discover.</span><br />
@@ -92,16 +92,13 @@ export default function RadarRoom() {
                 key={article.id}
               >
                 {/* NEW badge and lock side by side (they used to sit on top of each other) */}
+                {/* Articles without a published page are marked "Coming soon"; the website has no login */}
                 {(article.isNew || article.locked) && (
                   <div className="rr-card-badges">
-                    {article.isNew && <span className="rr-card-new">NEW</span>}
-                    {article.locked && (
-                      <span className="rr-card-lock" aria-label="Locked">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                          <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-                          <path d="M7 11V7a5 5 0 0110 0v4" />
-                        </svg>
-                      </span>
+                    {article.locked ? (
+                      <span className="rr-card-soon">COMING SOON</span>
+                    ) : (
+                      <span className="rr-card-new">NEW</span>
                     )}
                   </div>
                 )}
@@ -116,7 +113,7 @@ export default function RadarRoom() {
                     {article.readTime}
                   </span>
                   {article.locked ? (
-                    <span className="rr-card-login">Login to read</span>
+                    <span className="rr-card-login">Coming soon</span>
                   ) : (
                     // Real link (crawlable, keyboard focusable); its ::after covers the whole card
                     <Link to={`/radar-room/${article.slug}`} className="rr-card-read">Read →</Link>
@@ -130,15 +127,15 @@ export default function RadarRoom() {
             <div className="rr-login-cta-inner">
               <span className="rr-login-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-                  <path d="M7 11V7a5 5 0 0110 0v4" />
+                  <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9" />
+                  <path d="M13.73 21a2 2 0 01-3.46 0" />
                 </svg>
               </span>
               <div>
-                <h3 className="rr-login-title">Unlock the Full Radar Room</h3>
-                <p className="rr-login-sub">Log in to your REDDAR account to access all articles, research, and regularly updated resources.</p>
+                <h3 className="rr-login-title">More articles on the way</h3>
+                <p className="rr-login-sub">New guides on blood donation, blood groups and medical research are coming soon. Meanwhile, get the free REDDAR app to find donors and respond to requests near you.</p>
               </div>
-              <a href="#" className="rr-login-btn">Log In to REDDAR</a>
+              <Link to="/#download" className="rr-login-btn">Get the REDDAR App</Link>
             </div>
           </div>
         </div>

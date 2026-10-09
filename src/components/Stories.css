@@ -62,7 +62,7 @@
 
 .stories-sub {
   font-size: 1rem;
-  color: rgba(255,255,255,0.45);
+  color: rgba(255,255,255,0.7);
   line-height: 1.8;
   max-width: 520px;
 }
@@ -162,7 +162,7 @@
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(0,0,0,0.35);
+  color: rgba(0,0,0,0.6);
   background: rgba(0,0,0,0.04);
   padding: 0.25rem 0.65rem;
   border-radius: 4px;
@@ -234,7 +234,7 @@
 
 .story-person-info span {
   font-size: 0.72rem;
-  color: var(--warm-gray);
+  color: #5F5A55;
   line-height: 1.3;
 }
 
@@ -291,7 +291,7 @@
 
 .stories-cta-sub {
   font-size: 0.95rem;
-  color: rgba(255,255,255,0.45);
+  color: rgba(255,255,255,0.7);
   line-height: 1.8;
   margin-bottom: 2.5rem;
 }

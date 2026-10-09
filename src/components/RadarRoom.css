@@ -435,7 +435,7 @@
 
 .rr-login-sub {
   font-size: 0.85rem;
-  color: rgba(255,255,255,0.45);
+  color: rgba(255,255,255,0.7);
   line-height: 1.6;
 }
 
@@ -544,4 +544,14 @@
   .rr-hero-sub {
     font-size: 0.9rem;
   }
+}
+/* "Coming soon" badge for articles without a published page */
+.rr-card-soon {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: #111111;
+  background: rgba(0,0,0,0.07);
+  padding: 0.25rem 0.55rem;
+  border-radius: 3px;
 }

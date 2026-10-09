@@ -81,7 +81,7 @@
   align-items: center;
   gap: 0.4rem;
   font-size: 0.78rem;
-  color: rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.7);
 }
 
 .rra-time svg {
@@ -97,7 +97,7 @@
 
 .rra-source {
   font-size: 0.78rem;
-  color: rgba(255,255,255,0.3);
+  color: rgba(255,255,255,0.65);
 }
 
 /* Body */
@@ -175,7 +175,7 @@
 
 .rra-cta-inner p {
   font-size: 0.9rem;
-  color: rgba(255,255,255,0.45);
+  color: rgba(255,255,255,0.7);
   margin-bottom: 2rem;
   line-height: 1.6;
 }

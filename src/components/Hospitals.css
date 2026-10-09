@@ -237,3 +237,27 @@
   .hospitals-controls { flex-direction: column; }
   .hospitals-nearby-btn { width: 100%; }
 }
+.hospitals-error {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  color: #B3100F; /* darker red for readable text on the light pink box */
+}
+
+.hospitals-retry {
+  background: #FC1819;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.55rem 1.1rem;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.hospitals-retry:hover {
+  background: #a02020;
+}

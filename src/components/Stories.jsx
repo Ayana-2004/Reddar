@@ -96,7 +96,6 @@ export default function Stories() {
             These are not statistics. These are real moments when someone needed help, and someone else showed up. This is what REDDAR is for.
           </p>
         </div>
-        <div className="stories-hero-line" />
       </section>
 
       {/* ── STATS ── */}

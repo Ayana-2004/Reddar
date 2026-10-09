@@ -31,8 +31,9 @@ const contributions = [
 export default function Faircode() {
   return (
     <section className="fc" style={{ position: 'relative' }}>
-  <span id="about" style={{ position: 'absolute', top: '-80px' }} />
-  <span id="faircode" style={{ position: 'absolute', top: '-80px' }} />
+  {/* Anchor targets; the navbar offset comes from scroll-margin-top in index.css */}
+  <span id="about" style={{ position: 'absolute', top: 0 }} />
+  <span id="faircode" style={{ position: 'absolute', top: 0 }} />
       <div className="fc-band">
         <div className="fc-band-inner">
           <div className="fc-band-left">

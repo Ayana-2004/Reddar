@@ -118,7 +118,7 @@ export const termsOfService = [
   { type: "p", text: "We may suspend or remove accounts that break these rules." },
 
   { type: "h2", text: "5. Information on REDDAR" },
-  { type: "p", text: "Articles in the Radar Room and other content on REDDAR are general information, not medical advice. Always follow the advice of a doctor, hospital or blood bank." },
+  { type: "p", text: "Articles in the Reddar Room and other content on REDDAR are general information, not medical advice. Always follow the advice of a doctor, hospital or blood bank." },
 
   { type: "h2", text: "6. Free service and changes" },
   { type: "p", text: "REDDAR is free to use. We may change, pause or stop parts of REDDAR at any time, for example for maintenance or to improve the service." },

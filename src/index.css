@@ -115,3 +115,7 @@ body {
   border-color: var(--red);
   color: var(--red);
 }
+/* Section anchors land below the fixed navbar instead of under it */
+#how, #why, #faq, #download, #about, #faircode, #articles {
+  scroll-margin-top: var(--navbar-height, 80px);
+}

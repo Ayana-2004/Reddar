@@ -120,7 +120,7 @@ const staticRoutes = [
   },
   {
     path: "/radar-room",
-    title: "Radar Room - Blood Donation Guides, Myths & Facts | REDDAR",
+    title: "Reddar Room - Blood Donation Guides, Myths & Facts | REDDAR",
     description:
       "Articles on blood donation eligibility, blood groups, common myths and recovery after donating, written for the REDDAR community.",
     jsonLd: (r) =>
@@ -137,7 +137,7 @@ const staticRoutes = [
             })),
           },
         },
-        breadcrumbs([["Home", "/"], ["Radar Room", r.path]])
+        breadcrumbs([["Home", "/"], ["Reddar Room", r.path]])
       ),
   },
   {
@@ -178,7 +178,7 @@ const articleRoutes = publishedArticles.map((a) => {
   const body = articleContent[a.slug].body;
   return {
     path,
-    title: `${a.title} | REDDAR Radar Room`,
+    title: `${a.title} | Reddar Room`,
     description: a.excerpt,
     ogType: "article",
     jsonLd: () =>
@@ -201,7 +201,7 @@ const articleRoutes = publishedArticles.map((a) => {
           publisher: organization,
           isPartOf: { "@id": SITE_ID },
         },
-        breadcrumbs([["Home", "/"], ["Radar Room", "/radar-room"], [a.title, path]])
+        breadcrumbs([["Home", "/"], ["Reddar Room", "/radar-room"], [a.title, path]])
       ),
   };
 });
@@ -274,7 +274,7 @@ export function buildLlmsTxt() {
     "",
     ...staticRoutes.filter((r) => !r.noindex).map((r) => `- [${r.title}](${absoluteUrl(r.path)}): ${r.description}`),
     "",
-    "## Radar Room articles",
+    "## Reddar Room articles",
     "",
     ...articleRoutes.map((r) => `- [${r.title}](${absoluteUrl(r.path)}): ${r.description}`),
     "",
