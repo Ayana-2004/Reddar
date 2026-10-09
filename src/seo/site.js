@@ -156,7 +156,7 @@ const staticRoutes = [
     path: "/privacy",
     title: "Privacy Policy | REDDAR",
     description:
-      "How the REDDAR app collects, uses and shares your information, and how to delete your account.",
+      "How REDDAR, a social impact initiative by Faircode Infotech Pvt Ltd, collects, uses and shares your information, and how to delete your account.",
     jsonLd: (r) =>
       graph(webPage(r.path, r.title, r.description), breadcrumbs([["Home", "/"], ["Privacy Policy", r.path]])),
   },

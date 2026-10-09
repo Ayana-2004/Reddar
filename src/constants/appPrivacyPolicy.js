@@ -1,9 +1,13 @@
-// The REDDAR app's current official privacy policy, copied word for word from the
-// Google Doc linked on the App Store listing (checked 8 October 2026). Do not edit the
-// wording here: change the official policy first, then update this file to match.
+// The REDDAR app's official privacy policy, from the Google Doc linked on the App Store
+// listing (checked 8 October 2026), with Faircode Infotech's company details added
+// (confirmed by Faircode, 9 October 2026): operator named in section 1, and section 8
+// uses the company address and email instead of faircodelabs.dev@gmail.com.
+// Keep the Google Doc and store listings in step with this text.
 // The expanded website policy waiting for approval is on branch legal-pages.
+import { LEGAL_ENTITY, LEGAL_ADDRESS, CONTACT_EMAIL } from "./legal";
 
 export const APP_PRIVACY_EFFECTIVE = "June 4, 2026";
+export const APP_PRIVACY_UPDATED = "9 October 2026";
 
 export const appPrivacyPolicy = [
   {
@@ -12,7 +16,7 @@ export const appPrivacyPolicy = [
   },
   {
     "type": "p",
-    "text": "Welcome to REDDAR. We are committed to protecting your personal information and your right to privacy. This Privacy Policy explains how we collect, use, and share your information when you use the REDDAR mobile application (\"App\"). By using the App, you agree to the collection and use of information in accordance with this policy."
+    "text": `Welcome to REDDAR. REDDAR is a social impact initiative by ${LEGAL_ENTITY} ("Faircode", "we", "us"). We are committed to protecting your personal information and your right to privacy. This Privacy Policy explains how we collect, use, and share your information when you use the REDDAR mobile application ("App"). By using the App, you agree to the collection and use of information in accordance with this policy.`
   },
   {
     "type": "h2",
@@ -96,12 +100,14 @@ export const appPrivacyPolicy = [
   },
   {
     "type": "p",
-    "text": "If you have questions or comments about this Privacy Policy, please contact the development team at:"
+    "text": "If you have questions or comments about this Privacy Policy, please contact us at:"
   },
   {
     "type": "list",
     "items": [
-      "Email: faircodelabs.dev@gmail.com"
+      LEGAL_ENTITY,
+      `Address: ${LEGAL_ADDRESS}`,
+      `Email: ${CONTACT_EMAIL}`
     ]
   }
 ];
