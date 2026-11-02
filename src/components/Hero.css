@@ -132,9 +132,18 @@
   transition: border-color 0.2s, background 0.2s;
 }
 
-.hero-btn-outline:hover {
-  border-color: var(--red);
-  background: rgba(252, 24, 25, 0.1);
+/* No tap flash on the CTAs and store badges (bug 025) */
+.hero-btn-outline,
+.store-btn {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Only on devices that really hover: on touch screens a tap would leave it stuck */
+@media (hover: hover) {
+  .hero-btn-outline:hover {
+    border-color: var(--red);
+    background: rgba(252, 24, 25, 0.1);
+  }
 }
 
 /* Store label */
@@ -179,14 +188,17 @@
   transition: opacity 0.2s;
 }
 
-.store-btn:hover {
-  background: #222;
-  border-color: rgba(252, 24, 25, 0.5);
-  transform: translateY(-2px);
-}
+/* Lift only on devices that really hover: on touch screens a tap left the badge stuck lifted */
+@media (hover: hover) {
+  .store-btn:hover {
+    background: #222;
+    border-color: rgba(252, 24, 25, 0.5);
+    transform: translateY(-2px);
+  }
 
-.store-btn:hover::after {
-  opacity: 1;
+  .store-btn:hover::after {
+    opacity: 1;
+  }
 }
 
 .store-icon {
@@ -227,6 +239,11 @@
   gap: 1.5rem;
 }
 
+/* Desktop hero has a fixed height, so the slot is only needed on mobile */
+.hero-stats-slot {
+  display: none;
+}
+
 .hero-stat {
   display: flex;
   flex-direction: column;
@@ -257,6 +274,9 @@
   background: var(--black);
   display: flex;
   align-items: center;
+  /* Decorative radar: tapping it should not flash or select its labels (bug 025) */
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
   justify-content: center;
   position: relative;
   overflow: hidden;
@@ -506,6 +526,15 @@
    ================================================ */
 
 @media (max-width: 960px) {
+  /* Same height for the empty slot and the loaded stats row: no jump when numbers arrive */
+  .hero-stats-slot {
+    display: block;
+  }
+  .hero-stats-slot,
+  .hero-stats {
+    min-height: 2.1rem;
+  }
+
   .hero {
     height: auto;
     margin-top: var(--navbar-height);

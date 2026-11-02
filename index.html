@@ -23,9 +23,8 @@
        navigation by useSeo(); source of truth is src/seo/site.js. -->
   <!--seo-head-->
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Fonts: self-hosted Lexend, fetched before the CSS asks for it -->
+  <link rel="preload" href="/fonts/lexend-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
 </head>
   <body>
     <div id="root"></div>

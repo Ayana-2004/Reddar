@@ -5,6 +5,13 @@ const playstoreUrl = "https://play.google.com/store/apps/details?id=com.faircode
 const appstoreUrl  = "https://apps.apple.com/in/app/reddar-live-blood-connect/id6789000156";
 const API_BASE     = "https://blood-donation-u02c.onrender.com";
 
+const scrollToSection = (e) => {
+  const el = document.querySelector(e.currentTarget.getAttribute("href"));
+  if (!el) return;
+  e.preventDefault();
+  el.scrollIntoView({ behavior: "smooth" });
+};
+
 export default function Hero() {
   const radarRef = useRef(null);
   const [stats, setStats] = useState(null);
@@ -64,10 +71,11 @@ export default function Hero() {
           India's community-powered blood response network, powered by people and driven by humanity.
         </p>
 
-        {/* CTA ROW */}
+        {/* CTA ROW: one smooth scroll, like the navbar. A plain hash link also
+            triggers App's ScrollToTop, so two scrolls fought and the page jumped (bug 025) */}
         <div className="hero-cta-row">
-          <a href="#how"      className="hero-btn-outline">How It Works</a>
-          <a href="#download" className="hero-btn-outline">Learn More</a>
+          <a href="#how"      className="hero-btn-outline" onClick={scrollToSection}>How It Works</a>
+          <a href="#download" className="hero-btn-outline" onClick={scrollToSection}>Learn More</a>
         </div>
 
         {/* STORE LABEL */}
@@ -96,7 +104,9 @@ export default function Hero() {
           </a>
         </div>
 
-        {/* LIVE STATS: shown only once real numbers load, never as placeholders */}
+        {/* LIVE STATS: shown only once real numbers load, never as placeholders.
+            Until then an empty slot holds the space on mobile so the page below does not jump */}
+        {!stats && <div className="hero-stats-slot" aria-hidden="true" />}
         {stats && (
           <div className="hero-stats">
             <div className="hero-stat">
