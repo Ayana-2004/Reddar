@@ -103,7 +103,7 @@ export default function Faircode() {
           <div className="fc-vm-card fc-vm-mission">
             <span className="fc-vm-tag">Mission</span>
             <h3 className="fc-vm-title">
-              Make blood donation a <span style={{ whiteSpace: "nowrap" }}>real-time</span> lifesaving act.
+              Make blood donation a live lifesaving act.
             </h3>
             <p className="fc-vm-desc">
               To leverage technology and community participation to make

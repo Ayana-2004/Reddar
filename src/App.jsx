@@ -62,7 +62,7 @@ function HomePage() {
     maxWidth: "700px",
     margin: "0 auto 24px",
   }}>
-    A <span style={{ whiteSpace: "nowrap" }}>real-time</span> network designed to help blood donors become discoverable during emergencies.
+    A live network designed to help blood donors become discoverable during emergencies.
   </h2>
   <p style={{
     fontSize: "1rem",

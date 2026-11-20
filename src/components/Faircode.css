@@ -124,7 +124,7 @@
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #FC1819;
+  color: var(--red-text);
   display: block;
   margin-bottom: 1rem;
 }
@@ -256,7 +256,7 @@
 .fc-contrib-tag {
   font-size: 0.75rem;
   font-weight: 600;
-  color: #FC1819;
+  color: var(--red-text);
   letter-spacing: 0.05em;
   background: rgba(252, 24, 25,0.08);
   padding: 0.25rem 0.7rem;

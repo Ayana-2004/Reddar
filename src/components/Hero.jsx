@@ -54,7 +54,7 @@ export default function Hero() {
 
         <div className="hero-badge">
           <span className="hero-badge-dot" />
-          <span>India's Real-Time Donor Network</span>
+          <span>India's Live Donor Network</span>
         </div>
 
         <h1 className="hero-title">

@@ -3,7 +3,7 @@ import "./WhyReddar.css";
 
 const features = [
   {
-    title: "Real-Time Matching",
+    title: "Instant Matching",
     desc: "Donors and recipients are matched instantly based on blood group and location, with no delays and no middlemen.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -13,7 +13,7 @@ const features = [
     ),
   },
   {
-    title: "Location-Aware Discovery",
+    title: "Nearby Donor Discovery",
     desc: "REDDAR uses location intelligence to find the nearest available donor when every second counts.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">

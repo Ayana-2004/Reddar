@@ -203,7 +203,7 @@
   align-items: center;
   gap: 0.35rem;
   font-size: 0.8rem;
-  color: #8A8580;
+  color: var(--warm-gray);
   margin-bottom: 0.25rem;
 }
 

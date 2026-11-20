@@ -239,7 +239,7 @@
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: #FC1819;
+  color: var(--red-text);
   margin-bottom: 1rem;
 }
 

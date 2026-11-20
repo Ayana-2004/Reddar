@@ -40,7 +40,7 @@
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #FC1819;
+  color: var(--red-text);
   display: block;
   margin-bottom: 1rem;
 }
@@ -55,7 +55,7 @@
 
 .why-sub {
   font-size: 1rem;
-  color: #8A8580;
+  color: var(--warm-gray);
   max-width: 480px;
   margin: 0 auto;
   line-height: 1.7;
@@ -76,12 +76,19 @@
   border-radius: 12px;
   padding: 2rem 1.8rem;
   transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  /* Keep the card on its own layer: otherwise the browser promotes it when the lift
+     starts and drops it when it ends, and the text visibly snaps (bug 014) */
+  will-change: transform;
+  backface-visibility: hidden;
 }
 
-.why-card:hover {
-  border-color: rgba(252, 24, 25,0.3);
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+/* Only on devices that really hover: on touch screens a tap left the card stuck lifted */
+@media (hover: hover) {
+  .why-card:hover {
+    border-color: rgba(252, 24, 25,0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+  }
 }
 
 /* Fills the 4px gap left under a lifted card, so a cursor near the bottom edge
@@ -116,7 +123,7 @@
 
 .why-card-desc {
   font-size: 0.85rem;
-  color: #8A8580;
+  color: var(--warm-gray);
   line-height: 1.7;
 }
 

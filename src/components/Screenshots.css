@@ -94,7 +94,6 @@
   box-shadow:
     0 0 0 1px rgba(255,255,255,0.05),
     0 24px 48px rgba(0,0,0,0.5);
-  transition: transform 0.3s, box-shadow 0.3s;
   /* Matches the 9:16 screenshots so nothing is cropped (9:19 cut ~16% of the width) */
   aspect-ratio: 9/16;
 }
@@ -110,17 +109,9 @@
   pointer-events: none;
 }
 
-/* Hover on the card, which never moves, so the lifted phone does not flicker.
-   Only on devices that really hover: on touch screens a tap would leave it stuck lifted. */
-@media (hover: hover) {
-  .screenshot-card:hover .screenshot-phone {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow:
-      0 0 0 1px rgba(252, 24, 25,0.3),
-      0 32px 64px rgba(252, 24, 25,0.2),
-      0 16px 32px rgba(0,0,0,0.5);
-  }
-}
+/* No hover lift or zoom: these cards do nothing on click, so a phone that jumped and
+   zoomed under the cursor (blurring the screenshot) read as a glitch (bugs 014, 027).
+   Same rule as the Radar Room: only clickable cards react like links. */
 
 .phone-notch {
   position: absolute;

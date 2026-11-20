@@ -89,7 +89,7 @@ export default function Footer() {
               </div>
               <p className="footer-tagline">Life on Radar.</p>
               <p className="footer-brand-desc">
-                India's <span style={{ whiteSpace: "nowrap" }}>real-time</span> blood donor response network.
+                India's live blood donor response network.
                 Connecting donors, recipients, and hospitals
                 when every second matters.
               </p>
