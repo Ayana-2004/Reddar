@@ -68,7 +68,7 @@ export default function Hero() {
         </p>
 
         <p className="hero-sub hero-sub-italic">
-          India's community-powered blood response network, powered by people and driven by humanity.
+          India's community blood response network, powered by people and driven by humanity.
         </p>
 
         {/* CTA ROW: one smooth scroll, like the navbar. A plain hash link also

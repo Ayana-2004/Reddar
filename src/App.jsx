@@ -70,6 +70,7 @@ function HomePage() {
     lineHeight: 1.8,
     maxWidth: "560px",
     margin: "0 auto",
+    textWrap: "balance", // even line lengths, so "out there." never sits alone on the last line (bug 007)
   }}>
     Stay visible. Receive alerts. Respond when you can. Because sometimes 
     the difference between panic and hope is knowing someone is out&nbsp;there.
