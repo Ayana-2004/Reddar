@@ -141,6 +141,32 @@ body {
   border-color: var(--red);
   color: var(--red);
 }
+/* "Email address copied" note shown by EmailLink */
+.email-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translate(-50%, 12px);
+  max-width: calc(100% - 32px);
+  background: #111111;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0.75rem 1.2rem;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s, transform 0.2s;
+  z-index: 2000;
+  text-align: center;
+}
+.email-toast:empty { padding: 0; }
+.email-toast--show {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
 /* Section anchors land below the fixed navbar instead of under it */
 #how, #why, #faq, #download, #about, #faircode, #articles {
   scroll-margin-top: var(--navbar-height, 80px);

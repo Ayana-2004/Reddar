@@ -24,9 +24,11 @@ function ScrollToTop() {
   useSeo();
   useEffect(() => {
     // Links like "/#faq" (footer) should land on that section, not the top
+    // "instant": the page-wide smooth scrolling otherwise animated the new page up
+    // from wherever the old one was, which read as a glitch when opening a card (bug 038)
     const target = hash && document.getElementById(hash.slice(1));
-    if (target) target.scrollIntoView();
-    else window.scrollTo(0, 0);
+    if (target) target.scrollIntoView({ behavior: "instant" });
+    else window.scrollTo({ top: 0, left: 0, behavior: "instant" });
   }, [pathname, hash]);
   return null;
 }

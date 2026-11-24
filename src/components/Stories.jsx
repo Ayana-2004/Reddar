@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import EmailLink from "./EmailLink";
 import "./Stories.css";
 
 const stories = [
@@ -50,7 +51,7 @@ const stories = [
     id: 5,
     time: "2 years",
     title: "Donating Every 3 Months, Saving Lives Every Time",
-    quote: "I donate every 3 months like clockwork. REDDAR has made the whole process easier — I get matched with urgent requests, I show up, and I know exactly who I'm helping.",
+    quote: "I donate every 3 months like clockwork. REDDAR has made the whole process easier. I get matched with urgent requests, I show up, and I know exactly who I'm helping.",
     name: "Priya Nair",
     location: "Thiruvananthapuram, Kerala",
     bloodGroup: "O+",
@@ -152,12 +153,12 @@ export default function Stories() {
           <span className="stories-cta-eyebrow">Your Story Matters</span>
           <h2 className="stories-cta-title">Have a Story to Share?</h2>
           <p className="stories-cta-sub">
-            If REDDAR helped you find blood, or if you donated and saved a life — we want to hear from you. Your story could inspire the next donor.
+            If REDDAR helped you find blood, or if you donated and saved a life, we want to hear from you. Your story could inspire the next donor.
           </p>
           <div className="stories-cta-btns">
-            <a href="mailto:stories@reddar.in" className="stories-btn-primary">
+            <EmailLink email="stories@reddar.in" className="stories-btn-primary">
               Share Your Story
-            </a>
+            </EmailLink>
             <button className="stories-btn-outline" onClick={() => navigate("/")}>
               Download REDDAR
             </button>

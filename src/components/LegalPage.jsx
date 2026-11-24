@@ -1,4 +1,5 @@
 import { LAST_UPDATED } from "../constants/legal";
+import EmailLink from "./EmailLink";
 import "./LegalPage.css";
 
 // Turns email addresses and https links inside plain text into real links.
@@ -7,7 +8,7 @@ function withEmailLinks(text) {
     if (i % 2 === 0) return part;
     return part.startsWith("http")
       ? <a key={i} href={part} target="_blank" rel="noopener noreferrer">{part}</a>
-      : <a key={i} href={`mailto:${part}`}>{part}</a>;
+      : <EmailLink key={i} email={part} />;
   });
 }
 

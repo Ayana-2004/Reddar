@@ -157,19 +157,29 @@
     gap: 2.5rem;
   }
 
+  /* Icon in a fixed column, number, title and text stacked beside it: every step
+     starts its text at the same x (they used to drift with the title width, bug 058) */
   .hiw-step {
-    max-width: 100%;             /* ← full width on mobile */
+    max-width: 100%;
     width: 100%;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    grid-template-areas: "icon num" "icon title" "icon desc";
+    grid-template-rows: auto auto 1fr;
+    column-gap: 1.2rem;
     text-align: left;
-    gap: 1.2rem;
-    align-items: flex-start;
-    padding: 0;                  /* ← no side padding that clips content */
+    align-items: start;
+    padding: 0;
   }
 
   .hiw-step-icon {
+    grid-area: icon;
     margin-bottom: 0;
   }
+
+  .hiw-step-num { grid-area: num; margin-bottom: 0.25rem; }
+  .hiw-step-title { grid-area: title; margin-bottom: 0.35rem; }
+  .hiw-step-desc { grid-area: desc; }
 
   .hiw-step-text {
     flex: 1;
@@ -186,7 +196,8 @@
   }
 
   .hiw-step {
-    gap: 1rem;
+    grid-template-columns: 44px 1fr;
+    column-gap: 1rem;
   }
 
   .hiw-step-icon {

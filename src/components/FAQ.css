@@ -1,23 +1,3 @@
-@media (max-width: 480px) {
-  .faq {
-    padding: 5rem 1.2rem;
-  }
-
-  .faq-question {
-    padding: 1.3rem 0;
-    gap: 1rem;
-  }
-
-  .faq-q-text {
-    font-size: 0.88rem;
-  }
-
-  .faq-icon {
-    width: 24px;
-    height: 24px;
-    flex-shrink: 0;
-  }
-}
 .faq {
   background: #111111;
   padding: 7rem 2rem;
@@ -82,12 +62,15 @@
   transition: background 0.2s;
 }
 
-.faq-item:hover {
-  background: rgba(255,255,255,0.02);
+@media (hover: hover) {
+  .faq-item:hover {
+    background: rgba(255,255,255,0.02);
+  }
 }
 
 /* The question row is a <button>: reset browser button styles */
 .faq-question {
+  -webkit-tap-highlight-color: transparent;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -133,8 +116,10 @@
   transition: border-color 0.2s, color 0.2s, transform 0.3s;
 }
 
-.faq-question:hover .faq-icon {
-  border-color: #FC1819;
+@media (hover: hover) {
+  .faq-question:hover .faq-icon {
+    border-color: #FC1819;
+  }
 }
 
 .faq-item--open .faq-icon {
@@ -152,19 +137,28 @@
   transition: opacity 0.2s;
 }
 
-.faq-item--open .faq-icon-v {
-  opacity: 0;
-}
+/* Open: the + turns 45 degrees into an x. Hiding the vertical line as well left a
+   single slanted stroke */
 
 /* Answer */
+/* Opens to the answer's real height (the old 300px max-height could cut long answers
+   on phones and made the speed uneven) */
 .faq-answer {
-  max-height: 0;
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
+}
+
+.faq-answer-inner {
   overflow: hidden;
-  transition: max-height 0.4s ease, padding 0.3s ease;
+  min-height: 0;
 }
 
 .faq-item--open .faq-answer {
-  max-height: 300px;
+  grid-template-rows: 1fr;
+}
+
+.faq-answer p {
   padding-bottom: 1.6rem;
 }
 
@@ -177,5 +171,28 @@
 @media (max-width: 600px) {
   .faq-q-text {
     font-size: 0.92rem;
+  }
+}
+
+/* Phone rules: moved here from the top of the file, where the base rules below them
+   overrode them so they never applied */
+@media (max-width: 480px) {
+  .faq {
+    padding: 5rem 1.2rem 3rem; /* smaller bottom: see bug 063 */
+  }
+
+  .faq-question {
+    padding: 1.3rem 0;
+    gap: 1rem;
+  }
+
+  .faq-q-text {
+    font-size: 0.88rem;
+  }
+
+  .faq-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
   }
 }

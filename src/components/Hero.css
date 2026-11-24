@@ -544,8 +544,10 @@
     overflow: clip;
   }
 
+  /* Top padding was 6rem from before the hero had margin-top for the navbar: it left a
+     big empty band under the header on phones (bug 057) */
   .hero-left {
-    padding: 6rem 1.5rem 3rem 1.5rem;
+    padding: 2.5rem 1.5rem 3rem 1.5rem;
     width: 100%;
     box-sizing: border-box;
   }
@@ -573,7 +575,7 @@
 
 @media (max-width: 480px) {
   .hero-left {
-    padding: 5.5rem 1.2rem 2.5rem 1.2rem;
+    padding: 2rem 1.2rem 2.5rem 1.2rem;
   }
 
   .hero-title {

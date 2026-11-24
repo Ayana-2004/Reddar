@@ -1,53 +1,3 @@
-@media (max-width: 600px) {
-  .fc-inner {
-    padding: 4rem 1.2rem 5rem;
-  }
-
-  .fc-band {
-    padding: 2rem 1.2rem;
-  }
-
-  .fc-band-quote {
-    font-size: 0.88rem;
-    padding-left: 0.9rem;
-  }
-
-  .fc-vm-card {
-    padding: 2rem 1.5rem;
-  }
-
-  .fc-contrib-item {
-    padding: 1.6rem 0;
-    gap: 0.6rem;
-  }
-
-  .fc-contrib-title {
-    font-size: 1.05rem;
-  }
-
-  .fc-contrib-desc {
-    font-size: 0.9rem;
-  }
-
-  .fc-statement {
-    margin-bottom: 3rem;
-    gap: 1.5rem;
-  }
-
-  .fc-vm {
-    margin-bottom: 3rem;
-  }
-}
-
-@media (max-width: 400px) {
-  .fc-band-inner {
-    gap: 1.2rem;
-  }
-
-  .fc-band-quote {
-    font-size: 0.82rem;
-  }
-}
 .fc {
   background: #FFFFFF;
 }
@@ -296,5 +246,58 @@
   .fc-band-inner {
     flex-direction: column;
     align-items: flex-start;
+  }
+}
+
+/* Phone rules: moved here from the top of the file, where the base rules below them
+   overrode them so they never applied */
+@media (max-width: 600px) {
+  .fc-inner {
+    padding: 4rem 1.2rem 5rem;
+  }
+
+  .fc-band {
+    padding: 2rem 1.2rem;
+  }
+
+  .fc-band-quote {
+    font-size: 0.88rem;
+    padding-left: 0.9rem;
+  }
+
+  .fc-vm-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .fc-contrib-item {
+    padding: 1.6rem 0;
+    gap: 0.6rem;
+  }
+
+  .fc-contrib-title {
+    font-size: 1.05rem;
+  }
+
+  .fc-contrib-desc {
+    font-size: 0.9rem;
+  }
+
+  .fc-statement {
+    margin-bottom: 3rem;
+    gap: 1.5rem;
+  }
+
+  .fc-vm {
+    margin-bottom: 3rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .fc-band-inner {
+    gap: 1.2rem;
+  }
+
+  .fc-band-quote {
+    font-size: 0.82rem;
   }
 }

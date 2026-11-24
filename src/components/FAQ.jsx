@@ -5,9 +5,15 @@ import { faqs } from "../constants/faqs";
 
 
 export default function FAQ() {
-  const [open, setOpen] = useState(null);
+  // Each question opens and closes on its own. Opening one used to close the open one
+  // above it, so the page slid up under the finger (bug 051).
+  const [open, setOpen] = useState(() => new Set());
 
-  const toggle = (i) => setOpen(open === i ? null : i);
+  const toggle = (i) => setOpen((prev) => {
+    const next = new Set(prev);
+    if (next.has(i)) next.delete(i); else next.add(i);
+    return next;
+  });
 
   return (
     <section className="faq" id="faq">
@@ -24,14 +30,14 @@ export default function FAQ() {
         <div className="faq-list">
           {faqs.map((item, i) => (
             <div
-              className={`faq-item ${open === i ? "faq-item--open" : ""}`}
+              className={`faq-item ${open.has(i) ? "faq-item--open" : ""}`}
               key={i}
             >
               {/* Whole row, "+" included, is one button: clickable and keyboard accessible */}
               <button
                 type="button"
                 className="faq-question"
-                aria-expanded={open === i}
+                aria-expanded={open.has(i)}
                 aria-controls={`faq-answer-${i}`}
                 onClick={() => toggle(i)}
               >
@@ -44,7 +50,9 @@ export default function FAQ() {
                 </span>
               </button>
               <div className="faq-answer" id={`faq-answer-${i}`}>
-                <p>{item.a}</p>
+                <div className="faq-answer-inner">
+                  <p>{item.a}</p>
+                </div>
               </div>
             </div>
           ))}

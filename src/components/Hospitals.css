@@ -56,6 +56,7 @@
 
 .hospitals-input {
   flex: 1;
+  min-width: 0; /* an input will not shrink below ~20 characters without this: it pushed Search out of the bar on phones (bug 061) */
   padding: 1rem 1.4rem;
   font-size: 0.95rem;
   border: none;
@@ -65,6 +66,7 @@
 }
 
 .hospitals-search-btn {
+  flex-shrink: 0;
   background: #FC1819;
   color: #fff;
   border: none;
@@ -234,7 +236,10 @@
 
 @media (max-width: 600px) {
   .hospitals-grid { grid-template-columns: 1fr; }
-  .hospitals-controls { flex-direction: column; }
+  .hospitals-controls { flex-direction: column; padding: 0 1.2rem; }
+  .hospitals-search-form { width: 100%; }
+  .hospitals-input { padding: 0.95rem 1rem; font-size: 1rem; }
+  .hospitals-search-btn { padding: 0.95rem 1.2rem; }
   .hospitals-nearby-btn { width: 100%; }
 }
 .hospitals-error {

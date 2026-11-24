@@ -196,25 +196,31 @@
   gap: 0.5rem;
   background: #fff;
   border: 1px solid rgba(0,0,0,0.1);
-  color: rgba(0,0,0,0.5);
+  color: rgba(0,0,0,0.7); /* was 0.5, 3.9:1; now 7:1 (bug 037) */
   padding: 0.5rem 1rem;
   border-radius: 4px;
   font-size: 0.78rem;
   font-weight: 600;
   letter-spacing: 0.04em;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
   white-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.rr-filter-btn:hover {
-  border-color: rgba(252, 24, 25,0.3);
-  color: #FC1819;
+/* Hover only on devices with a mouse, and never on the selected chip: the red hover
+   text on the red selected chip made its label vanish, and on phones a tap left the
+   hover stuck (bug 062) */
+@media (hover: hover) {
+  .rr-filter-btn:not(.rr-filter-btn--active):hover {
+    border-color: rgba(252, 24, 25,0.3);
+    color: #C41415;
+  }
 }
 
 .rr-filter-btn--active {
-  background: #FC1819;
-  border-color: #FC1819;
+  background: #C41415; /* darker brand red: white text 6.1:1 (was 3.97:1 on #FC1819) */
+  border-color: #C41415;
   color: #fff;
 }
 
@@ -246,12 +252,16 @@
   padding: 2rem;
   position: relative;
   transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* Only cards that open an article react like links. Locked cards used to lift
    on hover too, then did nothing on click, which read as a glitch. */
 .rr-card--clickable {
   cursor: pointer;
+  /* Own layer from the start, so the text does not snap when the lift starts and ends (bug 038) */
+  will-change: transform;
+  backface-visibility: hidden;
 }
 
 @media (hover: hover) {
@@ -317,7 +327,7 @@
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #FC1819;
+  color: var(--red-text); /* #FC1819 was 3.97:1 on white (bug 037) */
   display: block;
   margin-bottom: 0.9rem;
   padding-right: 5.5rem; /* keep clear of the badges */
@@ -329,6 +339,7 @@
   color: #111111;
   line-height: 1.35;
   margin-bottom: 0.8rem;
+  text-wrap: balance; /* even lines, no single word left alone (bug 037) */
 }
 
 .rr-card-excerpt {
@@ -336,6 +347,7 @@
   color: #5F5A55; /* was #8A8580, 3.65:1; now 6.8:1 */
   line-height: 1.7;
   margin-bottom: 1.5rem;
+  text-wrap: pretty;
 }
 
 .rr-card-footer {
